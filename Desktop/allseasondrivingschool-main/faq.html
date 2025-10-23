@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>FAQ - All Season Driving School</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #f97316;
+            --success: #10b981;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --gray: #64748b;
+            --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: white;
+            box-shadow: var(--shadow);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+
+        .logo img:hover {
+            transform: rotate(5deg) scale(1.05);
+        }
+
+        .logo-text {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #1e293b;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-links a.active {
+            color: var(--primary);
+        }
+
+        .nav-links a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--primary);
+        }
+
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Page Hero */
+        .page-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1576675466969-38eeae4b41f6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 50vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+            margin-top: 80px;
+        }
+
+        .page-hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            animation: fadeUp 1s ease;
+        }
+
+        .page-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .breadcrumbs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .breadcrumbs a {
+            color: #e2e8f0;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .breadcrumbs a:hover {
+            color: white;
+        }
+
+        .breadcrumbs span {
+            color: #e2e8f0;
+            margin: 0 10px;
+        }
+
+        /* FAQ Section */
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+
+        .section-title p {
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .faq-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .faq-categories {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .category-btn {
+            padding: 12px 25px;
+            background: white;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            color: var(--dark);
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .category-btn:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        .category-btn.active {
+            background: var(--primary);
+            border-color: var(--primary);
+            color: white;
+        }
+
+        .faq-accordion {
+            background: white;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-question {
+            padding: 25px 30px;
+            background: white;
+            border: none;
+            width: 100%;
+            text-align: left;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--dark);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: var(--transition);
+        }
+
+        .faq-question:hover {
+            background: #f8fafc;
+        }
+
+        .faq-question i {
+            color: var(--primary);
+            transition: var(--transition);
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            padding: 0 30px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            background: #f8fafc;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 25px 30px;
+            max-height: 500px;
+        }
+
+        .faq-answer p {
+            color: var(--gray);
+            line-height: 1.7;
+        }
+
+        /* Quick Links Section */
+        .quick-links {
+            background: var(--light);
+            padding: 60px 0;
+        }
+
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .link-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .link-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .link-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 1.8rem;
+        }
+
+        .link-card h3 {
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .link-card p {
+            color: var(--gray);
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: var(--primary);
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            box-shadow: var(--shadow);
+            font-size: 1rem;
+        }
+
+        .btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* CTA Section */
+        .cta {
+            background: linear-gradient(rgba(37, 99, 235, 0.9), rgba(37, 99, 235, 0.9)), url('https://images.unsplash.com/photo-1599156480040-87d5eefeb5d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 100px 0;
+        }
+
+        .cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .cta p {
+            max-width: 600px;
+            margin: 0 auto 30px;
+            font-size: 1.1rem;
+            color: #e2e8f0;
+        }
+
+        .btn-light {
+            background: white;
+            color: var(--primary);
+        }
+
+        .btn-light:hover {
+            background: #f8fafc;
+            color: var(--primary-dark);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 70px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-col h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: var(--primary);
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col a {
+            color: #cbd5e1;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-col a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+
+        .social-links {
+            display: flex;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            margin-right: 10px;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: #94a3b8;
+        }
+
+        /* WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            z-index: 1000;
+        }
+
+        .whatsapp-float a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            background: #25d366;
+            color: white;
+            border-radius: 50%;
+            text-decoration: none;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .whatsapp-float a:hover {
+            transform: scale(1.1);
+        }
+
+        .whatsapp-float i {
+            font-size: 1.8rem;
+        }
+
+        .whatsapp-float .tooltip {
+            position: absolute;
+            bottom: 70px;
+            right: 0;
+            background: var(--dark);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+        }
+
+        .whatsapp-float a:hover .tooltip {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Animations */
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .page-hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu {
+                display: block;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background: white;
+                flex-direction: column;
+                align-items: center;
+                padding-top: 50px;
+                transition: var(--transition);
+                box-shadow: var(--shadow);
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .nav-links li {
+                margin: 15px 0;
+            }
+
+            .page-hero h1 {
+                font-size: 2rem;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+
+            .btn {
+                padding: 10px 20px;
+            }
+            
+            .faq-question {
+                padding: 20px;
+                font-size: 1rem;
+            }
+            
+            .faq-answer {
+                padding: 0 20px;
+            }
+            
+            .faq-item.active .faq-answer {
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .page-hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .faq-categories {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .category-btn {
+                width: 100%;
+                max-width: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <img src="images/logo.png" alt="All Season Driving School">
+                    <span class="logo-text">All Season Driving School</span>
+                </div>
+                <div class="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="reviews.html">Reviews</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <div class="page-hero-content">
+                <div class="breadcrumbs">
+                    <a href="index.html">Home</a>
+                    <span><i class="fas fa-chevron-right"></i></span>
+                    <span>FAQ</span>
+                </div>
+                <h1>Frequently Asked Questions</h1>
+                <p>Find answers to the most common questions about our driving school services</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Common Questions</h2>
+                <p>Everything you need to know about our driving programs and services</p>
+            </div>
+
+            <div class="faq-container">
+                <!-- FAQ Categories -->
+                <div class="faq-categories fade-in">
+                    <button class="category-btn active" data-category="all">All Questions</button>
+                    <button class="category-btn" data-category="general">General</button>
+                    <button class="category-btn" data-category="pricing">Pricing</button>
+                    <button class="category-btn" data-category="services">Services</button>
+                    <button class="category-btn" data-category="booking">Booking</button>
+                </div>
+
+                <!-- FAQ Accordion -->
+                <div class="faq-accordion fade-in">
+                    <!-- General Questions -->
+                    <div class="faq-item active" data-category="general">
+                        <button class="faq-question">
+                            What services do you offer?
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>We offer comprehensive driving instruction including:</p>
+                            <ul>
+                                <li>Beginner Driver Education (BDE) programs</li>
+                                <li>G2 and G license training</li>
+                                <li>Individual driving lessons</li>
+                                <li>Road test preparation</li>
+                                <li>Car rental for driving tests</li>
+                                <li>Refresher courses for experienced drivers</li>
+                                <li>Defensive driving techniques</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="pricing">
+                        <button class="faq-question">
+                            What are your prices?
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>We offer competitive pricing with several package options:</p>
+                            <ul>
+                                <li><strong>Package #1:</strong> Complete BDE Program - $600 (HST & Certification Fees included)</li>
+                                <li><strong>Package #2:</strong> BDE + Road Test - $820 (HST & Certification Fees included)</li>
+                                <li><strong>Package #3:</strong> Premium BDE Program - $1000 (HST & Certification Fees included)</li>
+                                <li><strong>Individual Lessons:</strong> Starting at $50 per hour for G2, $55 per hour for G license</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="services">
+                        <button class="faq-question">
+                            Do you provide free pick-up service?
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes, we offer free pick-up and drop-off service within our service areas including Mississauga, Brampton, Oakville, Etobicoke, and surrounding areas. This service is included with all our driving packages and individual lessons.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="booking">
+                        <button class="faq-question">
+                            What is your cancellation policy?
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>We have a fair cancellation policy to accommodate our students:</p>
+                            <ul>
+                                <li>24-hour notice required for lesson cancellations</li>
+                                <li>Late cancellations (less than 24 hours) may result in 50% charge</li>
+                                <li>No-shows will be charged the full lesson fee</li>
+                                <li>Emergency situations are considered on a case-by-case basis</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="services">
+                        <button class="faq-question">
+                            Do you provide cars for road tests?
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes, we provide well-maintained, fully insured vehicles for road tests. Our cars meet all Ministry of Transportation requirements and include dual controls for safety. This service is included in our Package #2 and Package #3, and available as an add-on for individual lessons.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="general">
+                        <button class="faq-question">
+                            What is your success rate?
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>We pride ourselves on our exceptional success rate:</p>
+                            <ul>
+                                <li>98% first-time pass rate for G2 road tests</li>
+                                <li>95% first-time pass rate for G license tests</li>
+                                <li>99% overall success rate within two attempts</li>
+                                <li>Consistently high student satisfaction ratings</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="general">
+                        <button class="faq-question">
+                            Are your instructors certified?
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes, all our instructors are:</p>
+                            <ul>
+                                <li>Fully certified by the Ministry of Transportation Ontario (MTO)</li>
+                                <li>Experienced professionals with years of teaching experience</li>
+                                <li>Trained in defensive driving techniques</li>
+                                <li>Patient and professional with students of all skill levels</li>
+                                <li>First-aid and CPR certified</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="booking">
+                        <button class="faq-question">
+                            How do I book lessons?
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Booking lessons is easy and convenient:</p>
+                            <ul>
+                                <li><strong>Phone:</strong> Call us at (647) 770-7811</li>
+                                <li><strong>Email:</strong> allseasonds@gmail.com</li>
+                                <li><strong>Website:</strong> Fill out our contact form</li>
+                                <li><strong>WhatsApp:</strong> Message us directly</li>
+                                <li><strong>In-person:</strong> Visit our location in Mississauga</li>
+                            </ul>
+                            <p>We offer flexible scheduling including weekends and evenings.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="pricing">
+                        <button class="faq-question">
+                            What payment methods do you accept?
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>We accept various payment methods for your convenience:</p>
+                            <ul>
+                                <li>Cash</li>
+                                <li>Debit cards</li>
+                                <li>Credit cards (Visa, MasterCard)</li>
+                                <li>E-transfer</li>
+                                <li>Payment plans available for package deals</li>
+                            </ul>
+                            <p>Payment is typically due before the start of lessons or as arranged for package deals.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-category="booking">
+                        <button class="faq-question">
+                            Do you offer weekend lessons?
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes, we understand that our students have busy schedules, so we offer flexible lesson times:</p>
+                            <ul>
+                                <li>Weekend lessons (Saturday and Sunday)</li>
+                                <li>Evening lessons (until 9:00 PM)</li>
+                                <li>Early morning sessions</li>
+                                <li>Holiday availability</li>
+                                <li>Last-minute booking options when available</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Links Section -->
+    <section class="section quick-links">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Need More Information?</h2>
+                <p>Explore these resources for additional details about our services</p>
+            </div>
+            <div class="links-grid">
+                <div class="link-card fade-in">
+                    <div class="link-icon">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    <h3>Our Services</h3>
+                    <p>Learn about our comprehensive driving programs and training options</p>
+                    <a href="services.html" class="btn btn-outline">View Services</a>
+                </div>
+                <div class="link-card fade-in">
+                    <div class="link-icon">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <h3>Pricing</h3>
+                    <p>Check our competitive pricing and package deals</p>
+                    <a href="pricing.html" class="btn btn-outline">View Pricing</a>
+                </div>
+                <div class="link-card fade-in">
+                    <div class="link-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>Student Reviews</h3>
+                    <p>Read what our successful students have to say</p>
+                    <a href="reviews.html" class="btn btn-outline">Read Reviews</a>
+                </div>
+                <div class="link-card fade-in">
+                    <div class="link-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h3>Contact Us</h3>
+                    <p>Get in touch with any additional questions</p>
+                    <a href="contact.html" class="btn btn-outline">Contact Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Still Have Questions?</h2>
+                <p>Contact us directly and we'll be happy to help you get started on your driving journey</p>
+                <a href="contact.html" class="btn btn-light">Contact Us</a>
+                <a href="tel:(647) 770-7811" class="btn btn-secondary">Call Now: (647) 770-7811</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3>All Season Driving School</h3>
+                    <p>Professional driving instruction from certified instructors. Get your driver's license with our comprehensive training programs.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Info</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> 5428 Tenth Line W, Mississauga, ON L5M 0N1</li>
+                        <li><i class="fas fa-phone"></i> (647) 770-7811</li>
+                        <li><i class="fas fa-envelope"></i> allseasonds@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; <script>document.write(new Date().getFullYear());</script> All Season Driving School. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Button -->
+    <div class="whatsapp-float">
+        <a href="https://wa.me/9052260077?text=Hi! I'm interested in driving lessons with All Season Driving School. Can you help me with more information?" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-whatsapp"></i>
+            <span class="tooltip">Chat with us on WhatsApp!</span>
+        </a>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // FAQ functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // FAQ Accordion
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                
+                question.addEventListener('click', () => {
+                    // Close all other items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    
+                    // Toggle current item
+                    item.classList.toggle('active');
+                });
+            });
+
+            // FAQ Categories Filter
+            const categoryBtns = document.querySelectorAll('.category-btn');
+            
+            categoryBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Update active category button
+                    categoryBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    
+                    const category = btn.getAttribute('data-category');
+                    
+                    // Filter FAQ items
+                    faqItems.forEach(item => {
+                        if (category === 'all' || item.getAttribute('data-category') === category) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+
+            // Mobile Menu Toggle
+            const mobileMenu = document.querySelector('.mobile-menu');
+            const navLinks = document.querySelector('.nav-links');
+
+            mobileMenu.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
+
+            // Scroll Animation
+            const fadeElements = document.querySelectorAll('.fade-in');
+
+            const appearOnScroll = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            fadeElements.forEach(element => {
+                appearOnScroll.observe(element);
+            });
+
+            // Close mobile menu when clicking on a link
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

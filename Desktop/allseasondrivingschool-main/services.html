@@ -1,0 +1,1163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Our Services - All Season Driving School</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="images/logo.svg">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="apple-touch-icon" href="images/logo.svg">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #f97316;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --gray: #64748b;
+            --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: white;
+            box-shadow: var(--shadow);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+
+        .logo img:hover {
+            transform: rotate(5deg) scale(1.05);
+        }
+
+        .logo-text {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #1e293b;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-links a.active {
+            color: var(--primary);
+        }
+
+        .nav-links a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--primary);
+        }
+
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Page Hero */
+        .page-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/services-hero.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 50vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+            margin-top: 80px;
+        }
+
+        .page-hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            animation: fadeUp 1s ease;
+        }
+
+        .page-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .breadcrumbs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .breadcrumbs a {
+            color: #e2e8f0;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .breadcrumbs a:hover {
+            color: white;
+        }
+
+        .breadcrumbs span {
+            color: #e2e8f0;
+            margin: 0 10px;
+        }
+
+        /* Services Section */
+      .services {
+  padding: 100px 0;
+  background: #f8fafc;
+  font-family: "Poppins", sans-serif;
+}
+
+.services .section-title {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  align-items: stretch;
+}
+
+.service-card {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 30px 25px;
+  transition: all 0.4s ease;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.service-card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(37, 99, 235, 0.2);
+}
+
+.service-icon {
+  font-size: 40px;
+  color: #2563eb;
+  margin-bottom: 20px;
+}
+
+.service-content h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #1e293b;
+}
+
+.service-content p {
+  font-size: 15px;
+  color: #475569;
+  margin-bottom: 15px;
+}
+
+.service-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 25px;
+  text-align: left;
+}
+
+.service-features li {
+  font-size: 14px;
+  color: #334155;
+  margin-bottom: 8px;
+}
+
+.service-features i {
+  color: #2563eb;
+  margin-right: 8px;
+}
+
+.btn {
+  background: #2563eb;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 22px;
+  border-radius: 8px;
+  display: inline-block;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background: #1e40af;
+}
+
+/* Animations */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+.fade-in-up.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  .services {
+    padding: 60px 0;
+  }
+}
+
+
+ /* Features Section */
+
+#features-section.features {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #f8fafc, #eef2f7);
+  font-family: "Poppins", sans-serif;
+  color: inherit; /* won't force global text color */
+}
+
+/* Scope title only inside this section */
+#features-section .scoped-title {
+  text-align: center;
+  margin-bottom: 60px;
+}
+#features-section .scoped-title h2 {
+  font-size: 2.5rem;
+  color: #0f172a; /* only this section's H2 */
+  margin-bottom: 10px;
+  position: relative;
+  display: inline-block;
+}
+#features-section .scoped-title h2::after {
+  content: "";
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, #2563eb, #60a5fa);
+  display: block;
+  margin: 10px auto 0;
+  border-radius: 4px;
+}
+#features-section .scoped-title p {
+  color: #475569; /* only this section's paragraph */
+  font-size: 1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Grid & cards (scoped) */
+#features-section .features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 35px;
+  justify-content: center;
+  align-items: stretch;
+}
+
+#features-section .feature-card {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 40px 25px;
+  text-align: center;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  color: #111827; /* normal text inside card */
+}
+
+/* Hover overlay uses brand blue only on hover */
+#features-section .feature-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(37, 99, 235, 0.15); /* #2563eb tint */
+  transition: left 0.45s ease;
+  pointer-events: none;
+}
+#features-section .feature-card:hover::before {
+  left: 0;
+}
+
+/* Icon + text inside card */
+#features-section .feature-icon {
+  font-size: 2.8rem;
+  color: #2563eb;
+  margin-bottom: 20px;
+  transition: transform 0.35s ease, color 0.35s ease;
+}
+
+/* Hover: make card blue and inner text white */
+#features-section .feature-card:hover {
+  background-color: #2563eb; /* full brand blue on hover */
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.25);
+}
+#features-section .feature-card:hover .feature-icon,
+#features-section .feature-card:hover h3,
+#features-section .feature-card:hover p {
+  color: #ffffff !important; /* only affecting inner elements of this card */
+}
+
+/* Title & paragraph inside card */
+#features-section .feature-card h3 {
+  font-size: 1.3rem;
+  color: #0f172a;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+#features-section .feature-card p {
+  color: #64748b;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Fade-in animation (scoped) */
+#features-section .fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+#features-section .fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* responsive tweaks */
+@media (max-width: 768px) {
+  #features-section.features {
+    padding: 60px 0;
+  }
+  #features-section .feature-card {
+    padding: 28px 18px;
+  }
+}
+
+/* services areas section */
+.service-areas {
+  padding: 80px 0;
+  background: #f8fafc;
+  color: #333;
+}
+
+.service-areas .section-title {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.service-areas .section-title h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.service-areas .section-title p {
+  color: #64748b;
+  font-size: 1.1rem;
+}
+
+.areas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+}
+
+.area-card {
+  background: white;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+}
+
+.area-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+.area-card h3 {
+  font-size: 1.4rem;
+  color: #0f172a;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.area-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.area-list li {
+  font-size: 1rem;
+  padding: 10px 0;
+  border-bottom: 1px solid #e2e8f0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.area-list li i {
+  color: #2563eb;
+}
+
+.area-list.detailed li {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.area-list.detailed p {
+  font-size: 0.9rem;
+  color: #64748b;
+  margin: 4px 0 0 28px;
+}
+
+.fade-in {
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+        /* CTA Section */
+        .cta {
+            background: linear-gradient(rgba(0, 81, 255, 0.2), rgba(37, 99, 235, 0.2)), url('images/services-cta.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 100px 0;
+        }
+
+        .cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color:white;
+        }
+
+        .cta p {
+            max-width: 600px;
+            margin: 0 auto 30px;
+            font-size: 1.1rem;
+            color: white;
+        }
+
+        .btn-secondary {
+            background: #2563eb ;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color:black;
+        }
+
+        .btn-light {
+            background: white;
+            color:#2563eb
+
+        }
+
+        .btn-light:hover {
+            background: black;
+            color:white;
+        }
+
+        /* Footer */
+         footer {
+            background: var(--dark);
+            color: white;
+            padding: 70px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-col h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: var(--primary);
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col a {
+            color: #cbd5e1;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-col a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+
+        .social-links {
+            display: flex;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            margin-right: 10px;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: #94a3b8;
+        }
+
+        /* WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            z-index: 1000;
+        }
+
+        .whatsapp-float a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            background: #25d366;
+            color: white;
+            border-radius: 50%;
+            text-decoration: none;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .whatsapp-float a:hover {
+            transform: scale(1.1);
+        }
+
+        .whatsapp-float i {
+            font-size: 1.8rem;
+        }
+
+        .whatsapp-float .tooltip {
+            position: absolute;
+            bottom: 70px;
+            right: 0;
+            background: var(--dark);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+        }
+
+        .whatsapp-float a:hover .tooltip {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Animations */
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .page-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .area-list {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu {
+                display: block;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background: white;
+                flex-direction: column;
+                align-items: center;
+                padding-top: 50px;
+                transition: var(--transition);
+                box-shadow: var(--shadow);
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .nav-links li {
+                margin: 15px 0;
+            }
+
+            .page-hero h1 {
+                font-size: 2rem;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+
+            .btn {
+                padding: 10px 20px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .page-hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .service-content {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <img src="images/logo.png" alt="All Season Driving School">
+                    <span class="logo-text">All Season Driving School</span>
+                </div>
+                <div class="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html" class="active">Services</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="reviews.html">Reviews</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <div class="page-hero-content">
+                <div class="breadcrumbs">
+                    <a href="index.html">Home</a>
+                    <span><i class="fas fa-chevron-right"></i></span>
+                    <span>Our Services</span>
+                </div>
+                <h1>Our Driving Services</h1>
+                <p>From beginner to advanced, we offer a complete range of driving instruction services to meet all your needs</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+   <section class="section services">
+  <div class="container">
+    <div class="section-title fade-in">
+      <h2>Comprehensive Driving Services</h2>
+      <p>Choose from our range of professional driving instruction programs designed for every skill level</p>
+    </div>
+
+    <div class="services-grid">
+      <!-- Service Card -->
+      <div class="service-card fade-in-up">
+        <div class="service-icon"><i class="fas fa-user-graduate"></i></div>
+        <div class="service-content">
+          <h3>Beginner Driver Education</h3>
+          <p>Complete G1 to G2 license program including 20 hours of classroom theory, 10 hours of in-car training, and MTO certification.</p>
+          <ul class="service-features">
+            <li><i class="fas fa-check"></i> Traffic rules & regulations</li>
+            <li><i class="fas fa-check"></i> Vehicle control basics</li>
+            <li><i class="fas fa-check"></i> Road safety fundamentals</li>
+            <li><i class="fas fa-check"></i> MTO certification included</li>
+          </ul>
+        </div>
+        <a href="contact.html" class="btn">Get Started</a>
+      </div>
+
+      <div class="service-card fade-in-up">
+        <div class="service-icon"><i class="fas fa-road"></i></div>
+        <div class="service-content">
+          <h3>G2 Road Test Preparation</h3>
+          <p>Specialized training to prepare for your G2 road test with practice on test routes and common test scenarios.</p>
+          <ul class="service-features">
+            <li><i class="fas fa-check"></i> Test route familiarization</li>
+            <li><i class="fas fa-check"></i> Parallel parking practice</li>
+            <li><i class="fas fa-check"></i> Emergency stop procedures</li>
+            <li><i class="fas fa-check"></i> Mock test simulations</li>
+          </ul>
+        </div>
+        <a href="contact.html" class="btn">Prepare Now</a>
+      </div>
+
+      <div class="service-card fade-in-up">
+        <div class="service-icon"><i class="fas fa-highway"></i></div>
+        <div class="service-content">
+          <h3>G License Training</h3>
+          <p>Advanced driving instruction for G license including highway driving, complex intersections, and defensive techniques.</p>
+          <ul class="service-features">
+            <li><i class="fas fa-check"></i> Highway driving skills</li>
+            <li><i class="fas fa-check"></i> Advanced intersection techniques</li>
+            <li><i class="fas fa-check"></i> Defensive driving strategies</li>
+            <li><i class="fas fa-check"></i> Night driving practice</li>
+          </ul>
+        </div>
+        <a href="contact.html" class="btn">Upgrade License</a>
+      </div>
+
+      <div class="service-card fade-in-up">
+        <div class="service-icon"><i class="fas fa-user-clock"></i></div>
+        <div class="service-content">
+          <h3>Individual Lessons</h3>
+          <p>Customized one-on-one instruction tailored to your specific needs and learning pace.</p>
+          <ul class="service-features">
+            <li><i class="fas fa-check"></i> Personalized instruction</li>
+            <li><i class="fas fa-check"></i> Flexible scheduling</li>
+            <li><i class="fas fa-check"></i> Focus on weak areas</li>
+            <li><i class="fas fa-check"></i> Progress tracking</li>
+          </ul>
+        </div>
+        <a href="contact.html" class="btn">Book Lesson</a>
+      </div>
+
+      <div class="service-card fade-in-up">
+        <div class="service-icon"><i class="fas fa-car-side"></i></div>
+        <div class="service-content">
+          <h3>Road Test Services</h3>
+          <p>Complete road test support including vehicle provision, test booking, and pre-test warm-up lessons.</p>
+          <ul class="service-features">
+            <li><i class="fas fa-check"></i> Instructor's car for test</li>
+            <li><i class="fas fa-check"></i> Test booking assistance</li>
+            <li><i class="fas fa-check"></i> Pre-test practice session</li>
+            <li><i class="fas fa-check"></i> Pickup & dropoff service</li>
+          </ul>
+        </div>
+        <a href="contact.html" class="btn">Schedule Test</a>
+      </div>
+
+      <div class="service-card fade-in-up">
+        <div class="service-icon"><i class="fas fa-sync-alt"></i></div>
+        <div class="service-content">
+          <h3>Refresher Courses</h3>
+          <p>For experienced drivers who want to improve skills, regain confidence, or learn new techniques.</p>
+          <ul class="service-features">
+            <li><i class="fas fa-check"></i> Skill assessment</li>
+            <li><i class="fas fa-check"></i> Confidence building</li>
+            <li><i class="fas fa-check"></i> Modern driving techniques</li>
+            <li><i class="fas fa-check"></i> Highway refresher</li>
+          </ul>
+        </div>
+        <a href="contact.html" class="btn">Refresh Skills</a>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+  const cards = document.querySelectorAll(".fade-in-up");
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add("show");
+    });
+  }, { threshold: 0.2 });
+
+  cards.forEach(card => observer.observe(card));
+});
+
+</script>
+
+
+    <!-- Features Section -->
+<!-- Features section (scoped) -->
+<section id="features-section" class="section features">
+  <div class="container">
+    <div class="section-title scoped-title">
+      <h2>Why Choose Our Services?</h2>
+      <p>We provide exceptional driving instruction with benefits that set us apart</p>
+    </div>
+
+    <div class="features-grid">
+      <div class="feature-card fade-in">
+        <div class="feature-icon"><i class="fas fa-car"></i></div>
+        <h3>Free Pick-up &amp; Drop-off</h3>
+        <p>Convenient service within our coverage area - we come to you!</p>
+      </div>
+
+      <div class="feature-card fade-in">
+        <div class="feature-icon"><i class="fas fa-clock"></i></div>
+        <h3>Flexible Scheduling</h3>
+        <p>Morning, afternoon, evening, and weekend lessons available</p>
+      </div>
+
+      <div class="feature-card fade-in">
+        <div class="feature-icon"><i class="fas fa-users"></i></div>
+        <h3>Certified Instructors</h3>
+        <p>MTO certified instructors with years of teaching experience</p>
+      </div>
+
+      <div class="feature-card fade-in">
+        <div class="feature-icon"><i class="fas fa-star"></i></div>
+        <h3>High Success Rate</h3>
+        <p>98% pass rate with most students passing on their first attempt</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const section = document.getElementById('features-section');
+  if (!section) return;
+
+  const fadeEls = section.querySelectorAll('.fade-in');
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2 });
+
+  fadeEls.forEach(el => io.observe(el));
+});
+</script>
+
+    <!-- Service Areas Section -->
+<section class="section service-areas">
+  <div class="container">
+    <div class="section-title fade-in">
+      <h2>We Serve the Greater Toronto Area</h2>
+      <p>Comprehensive coverage across multiple cities and DriveTest centers</p>
+    </div>
+
+    <div class="areas-grid">
+      <!-- Primary Service Areas -->
+      <div class="area-card fade-in">
+        <h3><i class="fas fa-map"></i> Primary Service Areas</h3>
+        <ul class="area-list">
+          <li><i class="fas fa-map-marker-alt"></i> Mississauga</li>
+          <li><i class="fas fa-map-marker-alt"></i> Brampton</li>
+          <li><i class="fas fa-map-marker-alt"></i> Oakville</li>
+          <li><i class="fas fa-map-marker-alt"></i> Etobicoke</li>
+          <li><i class="fas fa-map-marker-alt"></i> Toronto</li>
+          <li><i class="fas fa-map-marker-alt"></i> Vaughan</li>
+          <li><i class="fas fa-map-marker-alt"></i> Markham</li>
+          <li><i class="fas fa-map-marker-alt"></i> Richmond Hill</li>
+        </ul>
+      </div>
+
+      <!-- Test Centers We Cover -->
+      <div class="area-card fade-in">
+        <h3><i class="fas fa-car"></i> Test Centers We Cover</h3>
+        <ul class="area-list detailed">
+          <li>
+            <span><i class="fas fa-car"></i> Mississauga DriveTest</span>
+            <p>Cooksville • Erin Mills • Meadowvale</p>
+          </li>
+          <li>
+            <span><i class="fas fa-car"></i> Brampton DriveTest</span>
+            <p>Downtown • Springdale • Mount Pleasant</p>
+          </li>
+          <li>
+            <span><i class="fas fa-car"></i> Oakville DriveTest</span>
+            <p>Glen Abbey • Palermo • Clearview</p>
+          </li>
+          <li>
+            <span><i class="fas fa-car"></i> Etobicoke DriveTest</span>
+            <p>Kingsway • Rexdale • Mimico</p>
+          </li>
+          <li>
+            <span><i class="fas fa-car"></i> Downsview DriveTest</span>
+            <p>York University • Jane & Finch • Sheppard West</p>
+          </li>
+          <li>
+            <span><i class="fas fa-car"></i> Port Union DriveTest</span>
+            <p>Rouge Hill • West Hill • Highland Creek</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const targets = document.querySelectorAll("#areas-section .fade-in-up");
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2 });
+  targets.forEach(el => observer.observe(el));
+});
+</script>
+
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Ready to Start Your Driving Journey?</h2>
+                <p>Join hundreds of successful students who have passed their driving tests with our professional instruction.</p>
+                <a href="contact.html" class="btn btn-secondary">Book a Lesson</a>
+                <a href="pricing.html" class="btn btn-light">View Pricing</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3>All Season Driving School</h3>
+                    <p>Professional driving instruction from certified instructors. Get your driver's license with our
+                        comprehensive training programs.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Info</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> 5428 Tenth Line W, Mississauga, ON L5M 0N1</li>
+                        <li><i class="fas fa-phone"></i> (905) 226-0077<p style="padding-left: 20px;">(647) 778-4573</p></li>
+                        <li><i class="fas fa-envelope"></i> allseasonds@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy;
+                    <script>document.write(new Date().getFullYear());</script> All Season Driving School. All rights
+                    reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Button -->
+    <div class="whatsapp-float">
+        <a href="https://wa.me/9052260077?text=Hi! I'm interested in driving lessons with All Season Driving School. Can you help me with more information?" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-whatsapp"></i>
+            <span class="tooltip">Chat with us on WhatsApp!</span>
+        </a>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+
+        mobileMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Scroll Animation
+        const fadeElements = document.querySelectorAll('.fade-in');
+
+        const appearOnScroll = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        fadeElements.forEach(element => {
+            appearOnScroll.observe(element);
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Pricing - All Season Driving School</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/svg+xml" href="images/logo.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #2563eb; --primary-dark: #1d4ed8; --secondary: #f97316; 
+            --success: #10b981; --dark: #1e293b; --light: #f8fafc; --gray: #64748b;
+            --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); --transition: all 0.3s ease;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Poppins', sans-serif; line-height: 1.6; color: var(--dark); }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        
+        /* Header */
+        header { background: white; box-shadow: var(--shadow); position: fixed; width: 100%; top: 0; z-index: 1000; }
+        .navbar { display: flex; justify-content: space-between; align-items: center; padding: 15px 0; }
+        .logo { display: flex; align-items: center; gap: 10px; }
+        .logo img { width: 50px; height: 50px; border-radius: 50%; transition: var(--transition); }
+        .logo img:hover {transform: rotate(5deg) scale(1.05);}
+        .logo-text {font-size: 1.2rem; font-weight: 600; color: #1e293b; letter-spacing: 0.5px;}
+        .nav-links { display: flex; list-style: none; }
+        .nav-links li { margin-left: 30px; }
+        .nav-links a { text-decoration: none; color: var(--dark); font-weight: 500; transition: var(--transition); position: relative; }
+        .nav-links a:hover, .nav-links a.active { color: var(--primary); }
+        .nav-links a.active::after { content: ''; position: absolute; bottom: -5px; left: 0; width: 100%; height: 2px; background: var(--primary); }
+        .mobile-menu { display: none; font-size: 1.5rem; cursor: pointer; }
+        
+        /* Page Hero */
+        .page-hero { 
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('images/pricing-hero.jpg');
+            background-size: cover; background-position: center; height: 50vh; display: flex; align-items: center; 
+            text-align: center; color: white; margin-top: 80px; 
+            /* Scroll par Work karna ka lia add kia hai  👇 */
+            background-attachment: fixed;
+        }
+        .page-hero-content { max-width: 800px; margin: 0 auto; animation: fadeUp 1s ease; }
+        .page-hero h1 { font-size: 3rem; margin-bottom: 20px; line-height: 1.2; }
+        .breadcrumbs { display: flex; justify-content: center; margin-bottom: 20px; }
+        .breadcrumbs a { color: #e2e8f0; text-decoration: none; transition: var(--transition); }
+        .breadcrumbs a:hover { color: white; }
+        .breadcrumbs span { color: #e2e8f0; margin: 0 10px; }
+        
+        /* Sections */
+        .section { padding: 80px 0; }
+        .section-title { text-align: center; margin-bottom: 50px; }
+        .section-title h2 { font-size: 2.5rem; margin-bottom: 15px; color: var(--dark); }
+        .section-title p { color: var(--gray); max-width: 600px; margin: 0 auto; }
+
+         /* Packages Section */
+        .packages {
+            background: #f9f9f9;
+        }
+
+        .package-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .package-card {
+            background: #fff;
+            border-radius: 0 0 15px 15px;
+            /* Only round bottom corners */
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            overflow: visible;
+            /* Changed from hidden to visible */
+            display: flex;
+            flex-direction: column;
+            transition: var(--transition);
+            position: relative;
+            height: 100%;
+        }
+
+        .package-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .package-img {
+            background-size: cover;
+            /* This will fill the entire space */
+            background-position: center;
+            height: 180px;
+            border-radius: 0;
+        }
+
+        .package-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 25px;
+            text-align: center;
+            border-radius: 0 0 15px 15px;
+        }
+
+        .package-content h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #222;
+        }
+
+        /* Package Price Section */
+        .package-price-container {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .package-price {
+            font-size: 22px;
+            font-weight: 700;
+            /* Made bolder */
+            color: var(--primary);
+            display: block;
+            /* Makes it take full width */
+        }
+
+        .package-tax {
+            font-size: 8px;
+            color: var(--gray);
+            display: block;
+            /* Makes it take full width */
+        }
+
+        /* Package Features */
+        .package-features {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 25px;
+            flex-grow: 1;
+            min-height: 150px;
+            width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: left;
+        }
+
+        .package-features li {
+            color: #555;
+            font-size: 14px;
+            margin: 8px 0;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .package-features i {
+            color: var(--primary);
+            margin-right: 8px;
+            margin-top: 2px;
+            flex-shrink: 0;
+        }
+
+        /* Certificate text */
+        .package-certificate {
+            font-size: 12px;
+            color: var(--gray);
+            margin-top: 10px;
+            font-style: italic;
+            text-align: center;
+        }
+
+        .premium {
+            border: 2px solid var(--primary);
+        }
+        /* Individual Pricing */
+        .individual-pricing { background: var(--light); }
+        .pricing-category { margin-bottom: 40px; }
+        .category-header { background: var(--primary); color: white; padding: 20px; border-radius: 10px 10px 0 0; text-align: center; }
+        .category-header h3 { font-size: 1.4rem; margin: 0; }
+        .pricing-items { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; padding: 30px; background: white; border-radius: 0 0 10px 10px; box-shadow: var(--shadow); }
+        .pricing-item { background: var(--light); padding: 25px; border-radius: 10px; text-align: center; transition: var(--transition); border: 1px solid #e2e8f0; }
+        .pricing-item:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
+        .pricing-item h4 { margin-bottom: 15px; color: var(--dark); font-size: 1.1rem; }
+        .item-price { font-size: 2rem; font-weight: 700; color: var(--primary); margin-bottom: 10px; }
+        .item-note { font-size: 0.85rem; color: var(--gray); }
+        
+        /* Promo Banner */
+        .promo-banner { 
+            background: linear-gradient(90deg, #ff4d4d, #ffcc00, #ff4d4d); background-size: 200% 100%; color: white; 
+            padding: 20px; border-radius: 10px; text-align: center; margin: 30px 0; font-weight: 700; 
+            font-size: 1.2rem; animation: shine 2s infinite linear; box-shadow: var(--shadow); 
+        }
+        
+        /* Buttons */
+        .btn { 
+            display: inline-block; padding: 12px 30px; background: var(--primary); color: white; border-radius: 25px; 
+            text-decoration: none; font-weight: 600; transition: var(--transition); border: none; cursor: pointer; 
+            box-shadow: var(--shadow); font-size: 1rem; text-align: center; margin: 5px; 
+        }
+        .btn:hover { background: var(--primary-dark); transform: translateY(-3px); }
+        .btn-block { display: block; width: 100%; }
+        .btn-secondary { background: var(--secondary); }
+        .btn-secondary:hover { background: #ea580c; }
+        .btn-light { background: white; color: var(--primary); }
+        .btn-light:hover { background: #f8fafc; color: var(--primary-dark); }
+        
+        /* CTA */
+           .cta {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #2563eb, #1e3a8a);
+  color: #fff;
+  text-align: center;
+  border-radius: 0;
+}
+
+.cta .section-title h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+.cta .section-title p {
+  font-size: 1.1rem;
+  color: #e2e8f0;
+  margin-bottom: 30px;
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+/* Primary Button (White) */
+.btn-light {
+  background: #fff;
+  color: #2563eb;
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.btn-light:hover {
+  background: #2563eb;
+  color: #fff;
+  border-color: #fff;
+}
+
+/* Secondary Button (Blue) */
+.btn-secondary {
+  background: #2563eb;
+  color: #fff;
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: 2px solid #2563eb;
+}
+
+.btn-secondary:hover {
+  background: #fff;
+  color: #2563eb;
+  border-color: #2563eb;
+}
+
+/* Fade-in animation */
+.fade-in {
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+    /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 70px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-col h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: var(--primary);
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col a {
+            color: #cbd5e1;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-col a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+
+        .social-links {
+            display: flex;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            margin-right: 10px;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: #94a3b8;
+        }
+        /* WhatsApp Button */
+        .whatsapp-float { position: fixed; bottom: 25px; right: 25px; z-index: 1000; }
+        .whatsapp-float a { 
+            display: flex; align-items: center; justify-content: center; width: 60px; height: 60px; background: #25d366; color: white; 
+            border-radius: 50%; text-decoration: none; box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5); transition: var(--transition); position: relative; 
+        }
+        .whatsapp-float a:hover { transform: scale(1.1); }
+        .whatsapp-float i { font-size: 1.8rem; }
+        .whatsapp-float .tooltip { 
+            position: absolute; bottom: 70px; right: 0; background: var(--dark); color: white; padding: 8px 15px; 
+            border-radius: 5px; font-size: 0.9rem; white-space: nowrap; opacity: 0; visibility: hidden; transition: var(--transition); 
+        }
+        .whatsapp-float a:hover .tooltip { opacity: 1; visibility: visible; }
+        
+        /* Animations */
+        @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes shine { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+        .fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .page-hero h1 { font-size: 2.5rem; }
+            .pricing-grid { grid-template-columns: 1fr; }
+            .pricing-card.featured, .pricing-card.featured:hover { transform: none; }
+        }
+        @media (max-width: 768px) {
+            .mobile-menu { display: block; }
+            .nav-links { 
+                position: fixed; top: 80px; left: -100%; width: 100%; height: calc(100vh - 80px); background: white; 
+                flex-direction: column; align-items: center; padding-top: 50px; transition: var(--transition); box-shadow: var(--shadow); 
+            }
+            .nav-links.active { left: 0; }
+            .nav-links li { margin: 15px 0; }
+            .page-hero h1 { font-size: 2rem; }
+            .section-title h2 { font-size: 2rem; }
+            .btn { padding: 10px 20px; }
+        }
+        @media (max-width: 576px) {
+            .page-hero h1 { font-size: 1.8rem; }
+            .price-amount { font-size: 2.5rem; }
+            .pricing-items { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <img src="images/logo.png" alt="All Season Driving School">
+                    <span class="logo-text">All Season Driving School</span>
+                </div>
+                <div class="mobile-menu"><i class="fas fa-bars"></i></div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="pricing.html" class="active">Pricing</a></li>
+                    <li><a href="reviews.html">Reviews</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <div class="page-hero-content">
+                <div class="breadcrumbs">
+                    <a href="index.html">Home</a> <span><i class="fas fa-chevron-right"></i></span> <span>Pricing</span>
+                </div>
+                <h1>Choose Your Driving Package</h1>
+                <p>Comprehensive driving instruction packages designed to get you road-ready</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Packages Section -->
+    <section class="section packages">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Our Driving Packages</h2>
+                <p>Choose the package that fits your needs and budget</p>
+            </div>
+
+            <div class="package-cards">
+                <!-- Package 1 -->
+                <div class="package-card fade-in">
+                    <div class="package-img" style="background-image: url('images/car-1.png');"></div>
+                    <div class="package-content">
+                        <h3>Complete BDE Program</h3>
+                        <div class="package-price-container">
+                            <div class="package-price">$600</div>
+                            <div class="package-tax">+ Tax & MTO Fee</div>
+                        </div>
+                        <ul class="package-features">
+                            <li><i class="fas fa-check"></i> 20 hrs of Online training</li>
+                            <li><i class="fas fa-check"></i> 10 hrs of In-car training</li>
+                            <li><i class="fas fa-check"></i> Road test preparation</li>
+                            <li><i class="fas fa-check"></i> 10 hrs of Homelinks</li>
+                            <li><i class="fas fa-check"></i> Free Pick-Up & Drop-Off</li>
+                            <li><i class="fas fa-check"></i> Defensive Driving Techniques</li>
+                            <li><i class="fas fa-check"></i> Advanced Driving Techniques</li>
+                        </ul>
+                        <a href="contact.html" class="btn">View Details</a>
+                        <div class="package-certificate">MTO Certificate upon Course completion</div>
+                    </div>
+                </div>
+
+                <!-- Package 2 -->
+                <div class="package-card fade-in">
+                    <div class="package-img" style="background-image: url('images/car-2.png');"></div>
+                    <div class="package-content">
+                        <h3>Complete BDE Program</h3>
+                        <div class="package-price-container">
+                            <div class="package-price">$750</div>
+                            <div class="package-tax">+ Tax & MTO Fee</div>
+                        </div>
+                        <ul class="package-features">
+                            <li><i class="fas fa-check"></i> 20 hrs of Online training</li>
+                            <li><i class="fas fa-check"></i> 10 hrs of In-car training</li>
+                            <li><i class="fas fa-check"></i> Road test preparation</li>
+                            <li><i class="fas fa-check"></i> 10 hrs of Homelinks</li>
+                            <li><i class="fas fa-check"></i> Free Pick-Up & Drop-Off</li>
+                            <li><i class="fas fa-check"></i> Defensive Driving Techniques</li>
+                            <li><i class="fas fa-check"></i> Advanced Driving Techniques</li>
+                            <li><i class="fas fa-check"></i> Use Driving school vehicle for your Road test</li>
+                        </ul>
+                        <a href="contact.html" class="btn">View Details</a>
+                        <div class="package-certificate">MTO Certificate upon Course completion</div>
+                    </div>
+                </div>
+
+                <!-- Package 3 -->
+                <div class="package-card fade-in">
+                    <div class="package-img" style="background-image: url('images/car-3.png');"></div>
+                    <div class="package-content">
+                        <h3>Premium BDE Program</h3>
+                        <div class="package-price-container">
+                            <div class="package-price">$1500</div>
+                            <div class="package-tax">+ Tax & MTO Fee</div>
+                        </div>
+                        <ul class="package-features">
+                            <li><i class="fas fa-check"></i> 20 hrs of Online training</li>
+                            <li><i class="fas fa-check"></i> 15 hrs of In-car training</li>
+                            <li><i class="fas fa-check"></i> Road test preparation</li>
+                            <li><i class="fas fa-check"></i> 10 hrs of Homelinks</li>
+                            <li><i class="fas fa-check"></i> Free Pick-Up & Drop-Off</li>
+                            <li><i class="fas fa-check"></i> Defensive Driving Techniques</li>
+                            <li><i class="fas fa-check"></i> Advanced Driving Techniques</li>
+                            <li><i class="fas fa-check"></i> Use Driving school vehicle for your Road test</li>
+                        </ul>
+                        <a href="contact.html" class="btn">View Details</a>
+                        <div class="package-certificate">MTO Certificate upon Course completion</div>
+                    </div>
+                </div>
+
+                <!-- Package 4 -->
+                <div class="package-card fade-in">
+                    <div class="package-img" style="background-image: url('images/car-4.png');"></div>
+                    <div class="package-content">
+                        <h3>Individual Lessons </br> G2 & G License</h3>
+                        <div class="package-price-container">
+                            <div class="package-price">$50</div>
+                            <div class="package-tax">+ Tax</div>
+                        </div>
+                        <ul class="package-features">
+                            <li><i class="fas fa-check"></i> 20 hrs of Online training</li>
+                            <li><i class="fas fa-check"></i> Unlimited hrs of In-car training</li>
+                            <li><i class="fas fa-check"></i> Road test preparation</li>
+                            <li><i class="fas fa-check"></i> 10 hrs of Homelinks</li>
+                            <li><i class="fas fa-check"></i> Free Pick-Up & Drop-Off</li>
+                            <li><i class="fas fa-check"></i> Defensive Driving Techniques</li>
+                            <li><i class="fas fa-check"></i> Advanced Driving Techniques</li>
+                        </ul>
+                        <a href="contact.html" class="btn">View Details</a>
+                        <br><br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Individual Pricing Section -->
+    <section class="section individual-pricing">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Individual Training Options</h2>
+                <p>Flexible training packages tailored to your specific needs</p>
+            </div>
+
+            <!-- Promo Banner -->
+            <div class="promo-banner fade-in">🎉 Limited Time Promotion: Save on G License Training! 🎉</div>
+
+            <!-- Road Test Only -->
+            <div class="pricing-category fade-in">
+                <div class="category-header"><h3><i class="fas fa-car mr-2"></i>Road Test Only (G2/G)</h3></div>
+                <div class="pricing-items">
+                    <div class="pricing-item"><h4>2 Hour Road Test</h4><div class="item-price">$180</div><p class="item-note">Pick & Drop same location<br>(local area only)</p></div>
+                    <div class="pricing-item"><h4>+ Every Additional Hour</h4><div class="item-price">$70</div><p class="item-note">Fixed Rate</p></div>
+                </div>
+            </div>
+
+            <!-- G2 License Training -->
+            <div class="pricing-category fade-in">
+                <div class="category-header"><h3><i class="fas fa-car mr-2"></i>G2 License Training</h3></div>
+                <div class="pricing-items">
+                    <div class="pricing-item"><h4>1 Hour Lesson</h4><div class="item-price">$50</div><p class="item-note">Pick & Drop same location</p></div>
+                    <div class="pricing-item"><h4>1 Hour + Road Test</h4><div class="item-price">$220</div><p class="item-note">Pick & Drop same location</p></div>
+                    <div class="pricing-item"><h4>2 Hours + Road Test</h4><div class="item-price">$265</div><p class="item-note">Pick & Drop same location</p></div>
+                    <div class="pricing-item"><h4>3 Hours + Road Test</h4><div class="item-price">$310</div><p class="item-note">Pick & Drop same location</p></div>
+                    <div class="pricing-item"><h4>4 Hours + Road Test</h4><div class="item-price">$355</div><p class="item-note">Pick & Drop same location</p></div>
+                    <div class="pricing-item"><h4>5 Hours + Road Test</h4><div class="item-price">$400</div><p class="item-note">Pick & Drop same location</p></div>
+                    <div class="pricing-item"><h4>10 Hours + Road Test</h4><div class="item-price">$620</div><p class="item-note">Pick & Drop same location</p></div>
+                </div>
+            </div>
+
+            <!-- G License Training -->
+            <div class="pricing-category fade-in">
+                <div class="category-header"><h3><i class="fas fa-car mr-2"></i>G License Training</h3></div>
+                <div class="pricing-items">
+                    <div class="pricing-item"><h4>1 Hour Lesson</h4><div class="item-price">$55</div><p class="item-note">Pick & Drop same location</p></div>
+                    <div class="pricing-item"><h4>1 Hour + Road Test</h4><div class="item-price">$220 <small class="text-danger"><del>$235</del></small></div><p class="item-note">Pick & Drop same location</p></div>
+                    <div class="pricing-item"><h4>2 Hours + Road Test</h4><div class="item-price">$265 <small class="text-danger"><del>$285</del></small></div><p class="item-note">Pick & Drop same location</p></div>
+                    <div class="pricing-item"><h4>3 Hours + Road Test</h4><div class="item-price">$310 <small class="text-danger"><del>$335</del></small></div><p class="item-note">Pick & Drop same location</p></div>
+                    <div class="pricing-item"><h4>4 Hours + Road Test</h4><div class="item-price">$355 <small class="text-danger"><del>$385</del></small></div><p class="item-note">Pick & Drop same location</p></div>
+                    <div class="pricing-item"><h4>5 Hours + Road Test</h4><div class="item-price">$400 <small class="text-danger"><del>$435</del></small></div><p class="item-note">Pick & Drop same location</p></div>
+                    <div class="pricing-item"><h4>10 Hours + Road Test</h4><div class="item-price">$620 <small class="text-danger"><del>$670</del></small></div><p class="item-note">Pick & Drop same location</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+<section class="cta">
+  <div class="container">
+    <div class="section-title fade-in">
+      <h2>Ready to Start Your Driving Journey?</h2>
+      <p>Contact us today to book your preferred package or discuss custom training options.</p>
+      <div class="cta-buttons">
+        <a href="contact.html" class="btn btn-light">Contact Us</a>
+        <a href="tel:(905) 226-0077" class="btn btn-secondary">Call Now: (905) 226-0077</a>
+      </div>
+    </div>
+  </div>
+</section>
+  <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3>All Season Driving School</h3>
+                    <p>Professional driving instruction from certified instructors. Get your driver's license with our
+                        comprehensive training programs.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Info</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> 5428 Tenth Line W, Mississauga, ON L5M 0N1</li>
+                        <li><i class="fas fa-phone"></i> (905) 226-0077<p style="padding-left: 20px;">(647) 778-4573</p></li>
+                        <li><i class="fas fa-envelope"></i> allseasonds@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy;
+                    <script>document.write(new Date().getFullYear());</script> All Season Driving School. All rights
+                    reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Button -->
+    <div class="whatsapp-float">
+        <a href="https://wa.me/9052260077?text=Hi! I'm interested in driving lessons with All Season Driving School. Can you help me with more information?" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-whatsapp"></i>
+            <span class="tooltip">Chat with us on WhatsApp!</span>
+        </a>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const mobileMenu = document.querySelector('.mobile-menu');
+            const navLinks = document.querySelector('.nav-links');
+            
+            mobileMenu.addEventListener('click', () => navLinks.classList.toggle('active'));
+            
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', () => navLinks.classList.remove('active'));
+            });
+            
+            const fadeElements = document.querySelectorAll('.fade-in');
+            const appearOnScroll = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) entry.target.classList.add('visible');
+                });
+            }, { threshold: 0.1 });
+            
+            fadeElements.forEach(element => appearOnScroll.observe(element));
+        });
+    </script>
+</body>
+</html>

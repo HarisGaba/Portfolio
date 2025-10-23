@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Terms and Conditions - All Season Driving School</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #f97316;
+            --success: #10b981;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --gray: #64748b;
+            --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: white;
+            box-shadow: var(--shadow);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+
+        .logo img:hover {
+            transform: rotate(5deg) scale(1.05);
+        }
+
+        .logo-text {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #1e293b;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-links a.active {
+            color: var(--primary);
+        }
+
+        .nav-links a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--primary);
+        }
+
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Page Hero */
+        .page-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1576675466969-38eeae4b41f6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 50vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+            margin-top: 80px;
+        }
+
+        .page-hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            animation: fadeUp 1s ease;
+        }
+
+        .page-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .breadcrumbs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .breadcrumbs a {
+            color: #e2e8f0;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .breadcrumbs a:hover {
+            color: white;
+        }
+
+        .breadcrumbs span {
+            color: #e2e8f0;
+            margin: 0 10px;
+        }
+
+        /* Terms Section */
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+
+        .section-title p {
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .terms-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+
+        .terms-header {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .terms-header h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .last-updated {
+            opacity: 0.9;
+            font-size: 0.9rem;
+        }
+
+        .terms-content {
+            padding: 40px;
+        }
+
+        .terms-section {
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .terms-section:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .terms-section h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .terms-section h3 i {
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+
+        .terms-section p {
+            color: var(--gray);
+            margin-bottom: 15px;
+            line-height: 1.7;
+        }
+
+        .terms-section ul {
+            color: var(--gray);
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        .terms-section li {
+            margin-bottom: 8px;
+            line-height: 1.6;
+        }
+
+        .highlight-box {
+            background: #f8fafc;
+            border-left: 4px solid var(--primary);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .highlight-box p {
+            margin-bottom: 0;
+            color: var(--dark);
+        }
+
+        /* Quick Navigation */
+        .quick-nav {
+            background: var(--light);
+            padding: 40px 0;
+        }
+
+        .nav-sticky {
+            position: sticky;
+            top: 100px;
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: var(--shadow);
+        }
+
+        .nav-sticky h4 {
+            margin-bottom: 20px;
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+
+        .nav-links-list {
+            list-style: none;
+        }
+
+        .nav-links-list li {
+            margin-bottom: 10px;
+        }
+
+        .nav-links-list a {
+            color: var(--gray);
+            text-decoration: none;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links-list a:hover {
+            color: var(--primary);
+            transform: translateX(5px);
+        }
+
+        .nav-links-list i {
+            margin-right: 8px;
+            font-size: 0.8rem;
+            color: var(--primary);
+        }
+
+        /* CTA Section */
+        .cta {
+            background: linear-gradient(rgba(37, 99, 235, 0.9), rgba(37, 99, 235, 0.9)), url('https://images.unsplash.com/photo-1599156480040-87d5eefeb5d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 100px 0;
+        }
+
+        .cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .cta p {
+            max-width: 600px;
+            margin: 0 auto 30px;
+            font-size: 1.1rem;
+            color: #e2e8f0;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: var(--primary);
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            box-shadow: var(--shadow);
+            font-size: 1rem;
+        }
+
+        .btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+        }
+
+        .btn-light {
+            background: white;
+            color: var(--primary);
+        }
+
+        .btn-light:hover {
+            background: #f8fafc;
+            color: var(--primary-dark);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 70px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-col h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: var(--primary);
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col a {
+            color: #cbd5e1;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-col a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+
+        .social-links {
+            display: flex;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            margin-right: 10px;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: #94a3b8;
+        }
+
+        /* WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            z-index: 1000;
+        }
+
+        .whatsapp-float a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            background: #25d366;
+            color: white;
+            border-radius: 50%;
+            text-decoration: none;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .whatsapp-float a:hover {
+            transform: scale(1.1);
+        }
+
+        .whatsapp-float i {
+            font-size: 1.8rem;
+        }
+
+        .whatsapp-float .tooltip {
+            position: absolute;
+            bottom: 70px;
+            right: 0;
+            background: var(--dark);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+        }
+
+        .whatsapp-float a:hover .tooltip {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Animations */
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .page-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .terms-content {
+                padding: 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu {
+                display: block;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background: white;
+                flex-direction: column;
+                align-items: center;
+                padding-top: 50px;
+                transition: var(--transition);
+                box-shadow: var(--shadow);
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .nav-links li {
+                margin: 15px 0;
+            }
+
+            .page-hero h1 {
+                font-size: 2rem;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+
+            .btn {
+                padding: 10px 20px;
+            }
+            
+            .terms-header {
+                padding: 25px 20px;
+            }
+            
+            .terms-header h2 {
+                font-size: 1.6rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .page-hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .terms-content {
+                padding: 20px;
+            }
+            
+            .terms-section h3 {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <img src="images/logo.png" alt="All Season Driving School">
+                    <span class="logo-text">All Season Driving School</span>
+                </div>
+                <div class="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="reviews.html">Reviews</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <div class="page-hero-content">
+                <div class="breadcrumbs">
+                    <a href="index.html">Home</a>
+                    <span><i class="fas fa-chevron-right"></i></span>
+                    <span>Terms and Conditions</span>
+                </div>
+                <h1>Terms and Conditions</h1>
+                <p>Understanding our policies and procedures for driving instruction services</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Terms Section -->
+    <section class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 mb-4">
+                    <div class="nav-sticky fade-in">
+                        <h4>Quick Navigation</h4>
+                        <ul class="nav-links-list">
+                            <li><a href="#acceptance"><i class="fas fa-chevron-right"></i> Acceptance of Terms</a></li>
+                            <li><a href="#services"><i class="fas fa-chevron-right"></i> Service Description</a></li>
+                            <li><a href="#booking"><i class="fas fa-chevron-right"></i> Booking & Payment</a></li>
+                            <li><a href="#cancellation"><i class="fas fa-chevron-right"></i> Cancellation Policy</a></li>
+                            <li><a href="#responsibilities"><i class="fas fa-chevron-right"></i> Student Responsibilities</a></li>
+                            <li><a href="#safety"><i class="fas fa-chevron-right"></i> Safety & Liability</a></li>
+                            <li><a href="#refunds"><i class="fas fa-chevron-right"></i> Refund Policy</a></li>
+                            <li><a href="#privacy"><i class="fas fa-chevron-right"></i> Privacy Policy</a></li>
+                            <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contact Information</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-9">
+                    <div class="terms-container fade-in">
+                        <div class="terms-header">
+                            <h2>Terms and Conditions</h2>
+                            <div class="last-updated">Last updated: December 2024</div>
+                        </div>
+                        <div class="terms-content">
+                            <!-- Section 1 -->
+                            <div class="terms-section" id="acceptance">
+                                <h3><i class="fas fa-check-circle"></i> 1. Acceptance of Terms</h3>
+                                <p>By accessing and using the services of All Season Driving School, you accept and agree to be bound by the terms and provisions of this agreement. These terms govern your use of our driving instruction services and constitute a legally binding agreement between you and All Season Driving School.</p>
+                                <div class="highlight-box">
+                                    <p><strong>Important:</strong> Continued use of our services indicates your acceptance of any updates or modifications to these terms.</p>
+                                </div>
+                            </div>
+
+                            <!-- Section 2 -->
+                            <div class="terms-section" id="services">
+                                <h3><i class="fas fa-car"></i> 2. Service Description</h3>
+                                <p>All Season Driving School provides comprehensive driving instruction services designed to help students become safe, confident drivers. Our services include:</p>
+                                <ul>
+                                    <li><strong>Beginner Driver Education (BDE) programs</strong> - Complete training from G1 to G2 license</li>
+                                    <li><strong>G2 and G license training</strong> - Advanced driving instruction and test preparation</li>
+                                    <li><strong>Individual driving lessons</strong> - Customized instruction based on skill level</li>
+                                    <li><strong>Road test preparation and car rental</strong> - Vehicle provision and test route practice</li>
+                                    <li><strong>Refresher courses</strong> - For experienced drivers seeking skill improvement</li>
+                                    <li><strong>Defensive driving techniques</strong> - Advanced safety training</li>
+                                </ul>
+                            </div>
+
+                            <!-- Section 3 -->
+                            <div class="terms-section" id="booking">
+                                <h3><i class="fas fa-calendar-check"></i> 3. Booking and Payment</h3>
+                                <p>To ensure the best service experience, please review our booking and payment policies:</p>
+                                <ul>
+                                    <li>All bookings must be confirmed with a deposit or full payment as specified during registration</li>
+                                    <li>Payment is due before the start of lessons or as arranged for package deals</li>
+                                    <li>We accept multiple payment methods for your convenience:
+                                        <ul>
+                                            <li>Cash payments</li>
+                                            <li>Debit card transactions</li>
+                                            <li>Credit cards (Visa, MasterCard)</li>
+                                            <li>Electronic transfers</li>
+                                        </ul>
+                                    </li>
+                                    <li>Prices are subject to change without notice, though registered students will be honored at their registration price</li>
+                                    <li>Payment plans are available for package deals - please inquire for details</li>
+                                </ul>
+                            </div>
+
+                            <!-- Section 4 -->
+                            <div class="terms-section" id="cancellation">
+                                <h3><i class="fas fa-calendar-times"></i> 4. Cancellation Policy</h3>
+                                <p>We understand that schedules can change. Our cancellation policy is designed to be fair to both students and instructors:</p>
+                                <ul>
+                                    <li><strong>24-hour notice</strong> is required for lesson cancellations without penalty</li>
+                                    <li><strong>Late cancellations</strong> (less than 24 hours) may result in full charge for the scheduled lesson</li>
+                                    <li><strong>No-shows</strong> will be charged the full lesson fee</li>
+                                    <li><strong>Weather-related cancellations</strong> will be rescheduled at no additional cost to the student</li>
+                                    <li>Emergency situations will be considered on a case-by-case basis with proper documentation</li>
+                                    <li>Multiple late cancellations may require prepayment for future lessons</li>
+                                </ul>
+                                <div class="highlight-box">
+                                    <p><strong>Note:</strong> To cancel or reschedule a lesson, please contact us directly by phone at least 24 hours in advance.</p>
+                                </div>
+                            </div>
+
+                            <!-- Section 5 -->
+                            <div class="terms-section" id="responsibilities">
+                                <h3><i class="fas fa-user-graduate"></i> 5. Student Responsibilities</h3>
+                                <p>As a student of All Season Driving School, you have certain responsibilities to ensure a safe and effective learning environment:</p>
+                                <ul>
+                                    <li><strong>Punctuality:</strong> Must arrive on time for all scheduled lessons. Late arrivals may result in shortened lesson time</li>
+                                    <li><strong>Identification:</strong> Must bring valid government-issued photo ID to each lesson</li>
+                                    <li><strong>License Requirements:</strong> Must possess a valid G1 license or higher for driving lessons</li>
+                                    <li><strong>Safety Compliance:</strong> Must follow all traffic laws and instructor directions without exception</li>
+                                    <li><strong>Medical Disclosure:</strong> Must inform instructor of any medical conditions, medications, or physical limitations that may affect driving ability</li>
+                                    <li><strong>Sobriety:</strong> Must not be under the influence of alcohol, drugs, or any substances that impair driving ability</li>
+                                    <li><strong>Appropriate Attire:</strong> Must wear proper footwear (no flip-flops or high heels) for safe vehicle operation</li>
+                                </ul>
+                            </div>
+
+                            <!-- Section 6 -->
+                            <div class="terms-section" id="safety">
+                                <h3><i class="fas fa-shield-alt"></i> 6. Safety and Liability</h3>
+                                <p>Safety is our top priority. Please review our safety policies and liability information:</p>
+                                <ul>
+                                    <li>Students must follow all safety instructions provided by the instructor without question</li>
+                                    <li>All Season Driving School maintains comprehensive insurance coverage for all lessons</li>
+                                    <li>The school is not liable for accidents caused by student negligence or failure to follow instructions</li>
+                                    <li>Students are financially responsible for any traffic violations incurred during lessons</li>
+                                    <li>Instructors reserve the right to terminate lessons immediately if student behavior compromises safety</li>
+                                    <li>Vehicles are regularly maintained and inspected to ensure safety standards</li>
+                                    <li>Dual controls are installed in all training vehicles for instructor intervention when necessary</li>
+                                </ul>
+                                <div class="highlight-box">
+                                    <p><strong>Safety First:</strong> Our instructors are trained to prioritize safety above all else. Please respect their decisions regarding lesson continuation or termination.</p>
+                                </div>
+                            </div>
+
+                            <!-- Section 7 -->
+                            <div class="terms-section" id="refunds">
+                                <h3><i class="fas fa-money-bill-wave"></i> 7. Refund Policy</h3>
+                                <p>We strive to provide excellent service, but understand that circumstances may require refund consideration:</p>
+                                <ul>
+                                    <li><strong>Full refunds</strong> are available within 7 days of purchase if no lessons have been taken</li>
+                                    <li><strong>Partial refunds</strong> may be available for unused lessons in multi-lesson packages</li>
+                                    <li><strong>Administrative fees</strong> (up to 15%) may apply to refunds for processing costs</li>
+                                    <li>Refund requests must be submitted in writing via email or official form</li>
+                                    <li>Refunds will be processed within 14 business days of approval</li>
+                                    <li>Lessons already taken are non-refundable</li>
+                                    <li>Special circumstances will be reviewed on a case-by-case basis</li>
+                                </ul>
+                            </div>
+
+                            <!-- Section 8 -->
+                            <div class="terms-section" id="privacy">
+                                <h3><i class="fas fa-lock"></i> 8. Privacy Policy</h3>
+                                <p>We are committed to protecting your privacy and personal information:</p>
+                                <ul>
+                                    <li>Personal information collected is used solely for driving instruction purposes</li>
+                                    <li>We do not share your information with third parties without your explicit consent</li>
+                                    <li>Information may be disclosed when required by law or legal process</li>
+                                    <li>We implement security measures to protect your data from unauthorized access</li>
+                                    <li>You may request access to your personal information or request corrections</li>
+                                    <li>Payment information is processed securely and not stored on our systems</li>
+                                </ul>
+                                <div class="highlight-box">
+                                    <p><strong>Your Privacy Matters:</strong> We take your privacy seriously and handle your personal information with the utmost care and confidentiality.</p>
+                                </div>
+                            </div>
+
+                            <!-- Section 9 -->
+                            <div class="terms-section" id="contact">
+                                <h3><i class="fas fa-phone"></i> 9. Contact Information</h3>
+                                <p>For questions, concerns, or clarification about these terms and conditions, please contact us:</p>
+                                <ul>
+                                    <li><strong>Phone:</strong> <a href="tel:9052260077">(905) 226-0077</a></li>
+                                    <li><strong>Email:</strong> <a href="mailto:allseasonds@gmail.com">allseasonds@gmail.com</a></li>
+                                    <li><strong>Address:</strong> 5428 Tenth Line W, Mississauga, ON L5M 0N1</li>
+                                    <li><strong>Business Hours:</strong> Monday-Sunday 8:00 AM - 9:00 PM</li>
+                                    <li><strong>Emergency Contact:</strong> Available for current students with scheduled lessons</li>
+                                </ul>
+                                <p>We typically respond to inquiries within 24 hours during business days.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Ready to Start Your Driving Journey?</h2>
+                <p>Contact us today to book your first lesson or ask any questions about our terms and conditions</p>
+                <a href="contact.html" class="btn btn-light">Contact Us</a>
+                <a href="tel:9052260077" class="btn btn-secondary">Call Now: (905) 226-0077</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3>All Season Driving School</h3>
+                    <p>Professional driving instruction from certified instructors. Get your driver's license with our comprehensive training programs.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Info</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> 5428 Tenth Line W, Mississauga, ON L5M 0N1</li>
+                        <li><i class="fas fa-phone"></i> (905) 226-0077</li>
+                        <li><i class="fas fa-envelope"></i> allseasonds@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; <script>document.write(new Date().getFullYear());</script> All Season Driving School. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Button -->
+    <div class="whatsapp-float">
+        <a href="https://wa.me/19052260077?text=Hi! I'm interested in driving lessons with All Season Driving School. Can you help me with more information?" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-whatsapp"></i>
+            <span class="tooltip">Chat with us on WhatsApp!</span>
+        </a>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile Menu Toggle
+            const mobileMenu = document.querySelector('.mobile-menu');
+            const navLinks = document.querySelector('.nav-links');
+
+            mobileMenu.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
+
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('.nav-links-list a').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        const offsetTop = targetElement.offsetTop - 100;
+                        window.scrollTo({
+                            top: offsetTop,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // Scroll Animation
+            const fadeElements = document.querySelectorAll('.fade-in');
+
+            const appearOnScroll = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            fadeElements.forEach(element => {
+                appearOnScroll.observe(element);
+            });
+
+            // Close mobile menu when clicking on a link
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('active');
+                });
+            });
+
+            // Highlight current section in quick nav
+            const sections = document.querySelectorAll('.terms-section');
+            const navLinksList = document.querySelectorAll('.nav-links-list a');
+
+            window.addEventListener('scroll', () => {
+                let current = '';
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop - 150;
+                    const sectionHeight = section.clientHeight;
+                    
+                    if (pageYOffset >= sectionTop && pageYOffset < sectionTop + sectionHeight) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                navLinksList.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${current}`) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

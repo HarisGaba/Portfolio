@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Contact Us - All Season Driving School</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/svg+xml" href="images/logo.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #2563eb; --primary-dark: #1d4ed8; --secondary: #f97316; 
+            --dark: #1e293b; --light: #f8fafc; --gray: #64748b;
+            --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); --transition: all 0.3s ease;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Poppins', sans-serif; line-height: 1.6; color: var(--dark); }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        
+        /* Header */
+        header { background: white; box-shadow: var(--shadow); position: fixed; width: 100%; top: 0; z-index: 1000; }
+        .navbar { display: flex; justify-content: space-between; align-items: center; padding: 15px 0; }
+        .logo { display: flex; align-items: center; gap: 10px; }
+        .logo img { width: 50px; height: 50px; border-radius: 50%; transition: var(--transition); }
+        .logo img:hover { transform: rotate(5deg) scale(1.05); }
+        .logo-text { font-size: 1.2rem; font-weight: 600; color: #1e293b; letter-spacing: 0.5px; }
+        .nav-links { display: flex; list-style: none; }
+        .nav-links li { margin-left: 30px; }
+        .nav-links a { text-decoration: none; color: var(--dark); font-weight: 500; transition: var(--transition); position: relative; }
+        .nav-links a:hover, .nav-links a.active { color: var(--primary); }
+        .nav-links a.active::after { content: ''; position: absolute; bottom: -5px; left: 0; width: 100%; height: 2px; background: var(--primary); }
+        .mobile-menu { display: none; font-size: 1.5rem; cursor: pointer; }
+        
+        /* Page Hero */
+        .page-hero { 
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('images/contact-hero.jpg');
+            background-size: cover; background-position: center; height: 50vh; display: flex; align-items: center; 
+            text-align: center; color: white; margin-top: 80px; 
+        }
+        .page-hero-content { max-width: 800px; margin: 0 auto; animation: fadeUp 1s ease; }
+        .page-hero h1 { font-size: 3rem; margin-bottom: 20px; line-height: 1.2; }
+        .breadcrumbs { display: flex; justify-content: center; margin-bottom: 20px; }
+        .breadcrumbs a { color: #e2e8f0; text-decoration: none; transition: var(--transition); }
+        .breadcrumbs a:hover { color: white; }
+        .breadcrumbs span { color: #e2e8f0; margin: 0 10px; }
+        
+        /* Sections */
+        .section { padding: 80px 0; }
+        .section-title { text-align: center; margin-bottom: 50px; }
+        .section-title h2 { font-size: 2.5rem; margin-bottom: 15px; color: var(--dark); }
+        .section-title p { color: var(--gray); max-width: 600px; margin: 0 auto; }
+        
+        /* Contact Section */
+        .contact-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 50px; }
+        .contact-info h3 { margin-bottom: 20px; font-size: 1.5rem; }
+        .contact-details { list-style: none; margin-bottom: 30px; }
+        .contact-details li { margin-bottom: 25px; display: flex; align-items: flex-start; padding: 20px; background: var(--light); border-radius: 10px; box-shadow: var(--shadow); transition: var(--transition); }
+        .contact-details li:hover { transform: translateY(-5px); }
+        .contact-details i { color: var(--primary); margin-right: 15px; font-size: 1.5rem; margin-top: 3px; width: 30px; text-align: center; }
+        .contact-details div { flex: 1; }
+        .contact-details strong { display: block; margin-bottom: 5px; font-size: 1.1rem; }
+        .business-hours { background: var(--light); padding: 25px; border-radius: 10px; box-shadow: var(--shadow); }
+        .business-hours h4 { margin-bottom: 15px; font-size: 1.2rem; }
+        .hours-list { list-style: none; }
+        .hours-list li { display: flex; justify-content: space-between; margin-bottom: 10px; padding-bottom: 10px; border-bottom: 1px solid #e2e8f0; }
+        .hours-list li:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+        
+        /* Contact Form */
+        .contact-form { background: white; padding: 40px; border-radius: 10px; box-shadow: var(--shadow); }
+        .form-group { margin-bottom: 25px; }
+        .form-group label { display: block; margin-bottom: 8px; font-weight: 500; color: var(--dark); }
+        .form-control { width: 100%; padding: 12px 15px; border: 1px solid #ddd; border-radius: 5px; font-family: 'Poppins', sans-serif; transition: var(--transition); font-size: 1rem; }
+        .form-control:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1); }
+        textarea.form-control { min-height: 150px; resize: vertical; }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        
+        /* Buttons */
+        .btn { 
+            display: inline-block; padding: 12px 30px; background: var(--primary); color: white; border-radius: 5px; 
+            text-decoration: none; font-weight: 600; transition: var(--transition); border: none; cursor: pointer; 
+            box-shadow: var(--shadow); font-size: 1rem; 
+        }
+        .btn:hover { background: var(--primary-dark); transform: translateY(-3px); }
+        .btn-block { display: block; width: 100%; }
+        
+        /* Form Alerts */
+        .alert { padding: 15px; border-radius: 5px; margin-top: 20px; }
+        .alert-success { background: #d1fae5; color: #065f46; border: 1px solid #a7f3d0; }
+        .alert-danger { background: #fee2e2; color: #991b1b; border: 1px solid #fecaca; }
+        .spinner-border { display: inline-block; width: 1rem; height: 1rem; vertical-align: text-bottom; border: 0.2em solid currentColor; border-right-color: transparent; border-radius: 50%; animation: spinner-border .75s linear infinite; }
+        
+        /* Map Section */
+        .map-section { padding: 0 0 80px; }
+        .map-container { border-radius: 10px; overflow: hidden; box-shadow: var(--shadow); width: 100%; }
+        .map-container iframe { width: 100%; height: 450px; border: 0; display: block; }
+        
+        /* FAQ Section */
+       /* 🔷 FAQ Section */
+.faq-section {
+  background: linear-gradient(135deg, #f8fafc, #eef2f7);
+  padding: 100px 0;
+  font-family: "Poppins", sans-serif;
+}
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  justify-content: center;
+  align-items: start;
+}
+
+/* 💠 FAQ Card Styling */
+.faq-item {
+  background: #fff;
+  border-radius: 16px;
+  padding: 30px;
+  text-align: left;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Blue highlight on hover */
+.faq-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(37, 99, 235, 0.25);
+}
+
+.faq-item h4 {
+  color: #0f172a;
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  position: relative;
+  font-weight: 600;
+}
+
+.faq-item p {
+  color: #475569;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease, opacity 0.5s ease;
+  opacity: 0;
+}
+
+/* Active (expanded) FAQ */
+.faq-item.active p {
+  max-height: 200px;
+  opacity: 1;
+}
+
+/* Blue border animation */
+.faq-item::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0%;
+  height: 4px;
+  background: #2563eb;
+  transition: all 0.4s ease;
+  border-radius: 2px;
+  transform: translateX(-50%);
+}
+
+.faq-item:hover::before,
+.faq-item.active::before {
+  width: 100%;
+}
+
+/* ✨ Fade In */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 📱 Responsive */
+@media (max-width: 768px) {
+  .faq-section {
+    padding: 70px 0;
+  }
+  .faq-item {
+    padding: 25px;
+  }
+}
+
+        
+        /* Footer */
+        footer { background: var(--dark); color: white; padding: 70px 0 20px; }
+        .footer-content { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin-bottom: 50px; }
+        .footer-col h3 { font-size: 1.3rem; margin-bottom: 20px; position: relative; padding-bottom: 10px; }
+        .footer-col h3::after { content: ''; position: absolute; bottom: 0; left: 0; width: 50px; height: 2px; background: var(--primary); }
+        .footer-col ul { list-style: none; }
+        .footer-col ul li { margin-bottom: 10px; }
+        .footer-col a { color: #cbd5e1; text-decoration: none; transition: var(--transition); }
+        .footer-col a:hover { color: white; padding-left: 5px; }
+        .social-links { display: flex; margin-top: 20px; }
+        .social-links a { display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: rgba(255, 255, 255, 0.1); border-radius: 50%; margin-right: 10px; transition: var(--transition); }
+        .social-links a:hover { background: var(--primary); transform: translateY(-3px); }
+        .copyright { text-align: center; padding-top: 20px; border-top: 1px solid rgba(255, 255, 255, 0.1); font-size: 0.9rem; color: #94a3b8; }
+        
+        /* WhatsApp Button */
+        .whatsapp-float { position: fixed; bottom: 25px; right: 25px; z-index: 1000; }
+        .whatsapp-float a { 
+            display: flex; align-items: center; justify-content: center; width: 60px; height: 60px; background: #25d366; color: white; 
+            border-radius: 50%; text-decoration: none; box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5); transition: var(--transition); position: relative; 
+        }
+        .whatsapp-float a:hover { transform: scale(1.1); }
+        .whatsapp-float i { font-size: 1.8rem; }
+        .whatsapp-float .tooltip { 
+            position: absolute; bottom: 70px; right: 0; background: var(--dark); color: white; padding: 8px 15px; 
+            border-radius: 5px; font-size: 0.9rem; white-space: nowrap; opacity: 0; visibility: hidden; transition: var(--transition); 
+        }
+        .whatsapp-float a:hover .tooltip { opacity: 1; visibility: visible; }
+        
+        /* Animations */
+        @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes spinner-border { to { transform: rotate(360deg); } }
+        .fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .page-hero h1 { font-size: 2.5rem; }
+            .form-row { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 768px) {
+            .mobile-menu { display: block; }
+            .nav-links { 
+                position: fixed; top: 80px; left: -100%; width: 100%; height: calc(100vh - 80px); background: white; 
+                flex-direction: column; align-items: center; padding-top: 50px; transition: var(--transition); box-shadow: var(--shadow); 
+            }
+            .nav-links.active { left: 0; }
+            .nav-links li { margin: 15px 0; }
+            .page-hero h1 { font-size: 2rem; }
+            .section-title h2 { font-size: 2rem; }
+            .btn { padding: 10px 20px; }
+            .contact-form { padding: 25px; }
+        }
+        @media (max-width: 576px) {
+            .page-hero h1 { font-size: 1.8rem; }
+            .contact-details li { flex-direction: column; text-align: center; }
+            .contact-details i { margin-right: 0; margin-bottom: 10px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <img src="images/logo.png" alt="All Season Driving School">
+                    <span class="logo-text">All Season Driving School</span>
+                </div>
+                <div class="mobile-menu"><i class="fas fa-bars"></i></div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="reviews.html">Reviews</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <div class="page-hero-content">
+                <div class="breadcrumbs">
+                    <a href="index.html">Home</a> <span><i class="fas fa-chevron-right"></i></span> <span>Contact Us</span>
+                </div>
+                <h1>Get In Touch With Us</h1>
+                <p>Ready to start your driving journey? Contact us today for professional driving lessons</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Contact All Season Driving School</h2>
+                <p>We're here to answer your questions and help you get started with driving lessons</p>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info fade-in">
+                    <h3>Get In Touch</h3>
+                    <p>Have questions about our driving programs? We're here to help you get started on your driving journey.</p>
+                    
+                    <ul class="contact-details">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <strong>Address</strong>
+                                <p>5428 Tenth Line W, Mississauga, ON L5M 0N1</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <strong>Phone</strong>
+                                <p><a href="tel:(905) 226-0077" style="text-decoration: none; color: black;">(905) 226-0077</a></p>
+                                <p><a href="tel:(647) 778-4573" style="text-decoration: none; color: black">(647) 778-4573</a></p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <strong>Email</strong>
+                                <p><a href="mailto:allseasonds@gmail.com" style="text-decoration: none; color: black">allseasonds@gmail.com</a></p>
+                            </div>
+                        </li>
+                    </ul>
+                    
+                    <div class="business-hours">
+                        <h4>Business Hours</h4>
+                        <ul class="hours-list">
+                            <li><span>Monday - Friday:</span> <span>8:00 AM - 9:00 PM</span></li>
+                            <li><span>Saturday:</span> <span>9:00 AM - 7:00 PM</span></li>
+                            <li><span>Sunday:</span> <span>10:00 AM - 5:00 PM</span></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="contact-form fade-in">
+                    <h3>Send Us a Message</h3>
+                    <form id="contactForm" action="https://formsubmit.co/allseasonds@gmail.com" method="POST">
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name *</label>
+                                <input type="text" id="firstName" name="firstName" class="form-control" placeholder="Your First Name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name *</label>
+                                <input type="text" id="lastName" name="lastName" class="form-control" placeholder="Your Last Name" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" class="form-control" placeholder="your.email@example.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number *</label>
+                                <input type="tel" id="phone" name="phone" class="form-control" placeholder="(647) 123-4567" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="serviceType">Service Type *</label>
+                            <select id="serviceType" name="serviceType" class="form-control" required>
+                                <option value="">Select a service</option>
+                                <option value="package1">Package #1 - Complete BDE Program ($599)</option>
+                                <option value="package2">Package #2 - BDE + Road Test ($749)</option>
+                                <option value="package3">Package #3 - Premium BDE Program ($899)</option>
+                                <option value="g2-lesson">G2 License Training</option>
+                                <option value="g-lesson">G License Training</option>
+                                <option value="refresher">Refresher Course</option>
+                                <option value="road-test">Road Test Service</option>
+                                <option value="other">Other/General Inquiry</option>
+                            </select>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="location">Your Location</label>
+                                <select id="location" name="location" class="form-control">
+                                    <option value="">Select your area</option>
+                                    <option value="mississauga">Mississauga</option>
+                                    <option value="brampton">Brampton</option>
+                                    <option value="oakville">Oakville</option>
+                                    <option value="etobicoke">Etobicoke</option>
+                                    <option value="toronto">Toronto</option>
+                                    <option value="vaughan">Vaughan</option>
+                                    <option value="markham">Markham</option>
+                                    <option value="richmond-hill">Richmond Hill</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="preferredDate">Preferred Start Date</label>
+                                <input type="date" id="preferredDate" name="preferredDate" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Additional Information</label>
+                            <textarea id="message" name="message" class="form-control" placeholder="Please tell us about your driving goals, any specific concerns, or questions you may have..."></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="form-check">
+                                <input type="checkbox" id="newsletter" name="newsletter" class="form-check-input">
+                                <label for="newsletter" class="form-check-label">
+                                    I would like to receive updates about driving courses and promotions
+                                </label>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-block">
+                            <span id="submitText">Send Message</span>
+                            <span id="submitSpinner" class="spinner-border ml-2" style="display: none;"></span>
+                        </button>
+
+                        <div id="formSuccess" class="alert alert-success" style="display: none;">
+                            Thank you! Your message has been sent successfully. We'll get back to you within 24 hours.
+                        </div>
+                        
+                        <div id="formError" class="alert alert-danger" style="display: none;">
+                            Sorry, there was an error sending your message. Please try again or contact us directly.
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Find Us</h2>
+                <p>Visit our location in Mississauga</p>
+            </div>
+            <div class="map-container fade-in">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2891.481877098973!2d-79.7366759!3d43.5548412!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b43b224b0cca9%3A0x406ccdc84fcb46ac!2sAll%20Season%20Driving%20School!5e0!3m2!1sen!2sca!4v1760683023668!5m2!1sen!2sca" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+<section class="section faq-section">
+  <div class="container">
+    <div class="section-title fade-in">
+      <h2>Frequently Asked Questions</h2>
+      <p>Quick answers to common questions about our driving school</p>
+    </div>
+
+    <div class="faq-grid">
+      <div class="faq-item fade-in">
+        <h4>How do I book my first driving lesson?</h4>
+        <p>You can book your first lesson by filling out the contact form, calling us directly, or messaging us on WhatsApp. We'll get back to you within 24 hours to schedule your first lesson.</p>
+      </div>
+      <div class="faq-item fade-in">
+        <h4>What should I bring to my first lesson?</h4>
+        <p>For your first lesson, please bring your G1 license, comfortable shoes for driving, and any glasses or contacts if you require them for driving.</p>
+      </div>
+      <div class="faq-item fade-in">
+        <h4>Do you offer pick-up and drop-off services?</h4>
+        <p>Yes, we offer pick-up and drop-off services within our service areas for all driving lessons and road tests.</p>
+      </div>
+      <div class="faq-item fade-in">
+        <h4>What areas do you serve?</h4>
+        <p>We primarily serve Mississauga, Brampton, Oakville, and surrounding areas. Contact us to confirm if we serve your specific location.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const fadeElements = document.querySelectorAll(".fade-in");
+  const faqItems = document.querySelectorAll(".faq-item");
+
+  // Fade-in on scroll
+  const fadeObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add("show");
+    });
+  });
+  fadeElements.forEach(el => fadeObserver.observe(el));
+
+  // Accordion effect
+  faqItems.forEach(item => {
+    item.addEventListener("click", () => {
+      faqItems.forEach(i => i !== item && i.classList.remove("active"));
+      item.classList.toggle("active");
+    });
+  });
+});
+</script>
+
+
+    <!-- Footer -->
+   <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3>All Season Driving School</h3>
+                    <p>Professional driving instruction from certified instructors. Get your driver's license with our
+                        comprehensive training programs.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Info</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> 5428 Tenth Line W, Mississauga, ON L5M 0N1</li>
+                        <li><i class="fas fa-phone"></i> (905) 226-0077<p style="padding-left: 20px;">(647) 778-4573</p></li>
+                        <li><i class="fas fa-envelope"></i> allseasonds@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy;
+                    <script>document.write(new Date().getFullYear());</script> All Season Driving School. All rights
+                    reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Button -->
+    <div class="whatsapp-float">
+        <a href="https://wa.me/9052260077?text=Hi! I'm interested in driving lessons with All Season Driving School. Can you help me with more information?" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-whatsapp"></i>
+            <span class="tooltip">Chat with us on WhatsApp!</span>
+        </a>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile Menu Toggle
+            const mobileMenu = document.querySelector('.mobile-menu');
+            const navLinks = document.querySelector('.nav-links');
+            mobileMenu.addEventListener('click', () => navLinks.classList.toggle('active'));
+            
+            // Close mobile menu when clicking on a link
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', () => navLinks.classList.remove('active'));
+            });
+
+            // Scroll Animation
+            const fadeElements = document.querySelectorAll('.fade-in');
+            const appearOnScroll = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) entry.target.classList.add('visible');
+                });
+            }, { threshold: 0.1 });
+            fadeElements.forEach(element => appearOnScroll.observe(element));
+
+            // Contact Form Handling
+            const contactForm = document.getElementById('contactForm');
+            const submitButton = contactForm.querySelector('button[type="submit"]');
+            const submitText = document.getElementById('submitText');
+            const submitSpinner = document.getElementById('submitSpinner');
+            const formSuccess = document.getElementById('formSuccess');
+            const formError = document.getElementById('formError');
+
+            // Set minimum date for preferred start date to today
+            const preferredDateInput = document.getElementById('preferredDate');
+            const today = new Date().toISOString().split('T')[0];
+            preferredDateInput.setAttribute('min', today);
+
+            // Phone number formatting
+            const phoneInput = document.getElementById('phone');
+            phoneInput.addEventListener('input', function(e) {
+                let value = e.target.value.replace(/\D/g, '');
+                if (value.length > 0) {
+                    if (value.length <= 3) {
+                        value = `(${value}`;
+                    } else if (value.length <= 6) {
+                        value = `(${value.slice(0, 3)}) ${value.slice(3)}`;
+                    } else {
+                        value = `(${value.slice(0, 3)}) ${value.slice(3, 6)}-${value.slice(6, 10)}`;
+                    }
+                }
+                e.target.value = value;
+            });
+
+            // Service type change handler
+            const serviceTypeSelect = document.getElementById('serviceType');
+            serviceTypeSelect.addEventListener('change', function(e) {
+                const selectedValue = e.target.value;
+                const messageTextarea = document.getElementById('message');
+                
+                // Pre-fill message based on service type
+                const messages = {
+                    'package1': 'I am interested in Package #1 (Complete BDE Program). Please provide more information about the course schedule and availability.',
+                    'package2': 'I am interested in Package #2 (BDE + Road Test). Please provide more information about the road test booking process.',
+                    'package3': 'I am interested in Package #3 (Premium BDE Program). Please provide more information about the individual training component.',
+                    'g2-lesson': 'I am interested in G2 License Training. Please let me know about lesson availability and pricing.',
+                    'g-lesson': 'I am interested in G License Training. Please provide information about highway driving lessons.',
+                    'refresher': 'I am interested in a refresher course. Please let me know about assessment and training options.',
+                    'road-test': 'I am interested in road test services. Please provide information about car rental and test booking.'
+                };
+                
+                if (messages[selectedValue] && !messageTextarea.value) {
+                    messageTextarea.value = messages[selectedValue];
+                }
+            });
+        });
+    </script>
+</body>
+</html>

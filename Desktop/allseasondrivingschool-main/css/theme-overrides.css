@@ -1,0 +1,226 @@
+/* Bootstrap Overrides for Red/Black Theme */
+.btn-primary {
+  color: #fff !important;
+  background-color: #00008B !important;
+  border-color: #00008B !important;
+}
+
+.btn-primary:hover {
+  color: #fff !important;
+  background-color: #b91c1c !important;
+  border-color: #b91c1c !important;
+}
+
+.btn-primary:focus, .btn-primary.focus {
+  box-shadow: 0 0 0 0.2rem rgba(220, 38, 38, 0.5) !important;
+}
+
+.btn-primary.disabled, .btn-primary:disabled {
+  color: #fff !important;
+  background-color: #00008B !important;
+  border-color: #00008B !important;
+}
+
+.btn-primary:not(:disabled):not(.disabled):active, 
+.btn-primary:not(:disabled):not(.disabled).active,
+.show > .btn-primary.dropdown-toggle {
+  color: #fff !important;
+  background-color: #b91c1c !important;
+  border-color: #b91c1c !important;
+}
+
+.btn-outline-primary {
+  color: #00008B !important;
+  background-color: transparent !important;
+  border-color: #00008B !important;
+}
+
+.btn-outline-primary:hover {
+  color: #fff !important;
+  background-color: #00008B !important;
+  border-color: #00008B !important;
+}
+
+.btn-outline-primary:focus, .btn-outline-primary.focus {
+  box-shadow: 0 0 0 0.2rem rgba(220, 38, 38, 0.5) !important;
+}
+
+.btn-outline-primary.disabled, .btn-outline-primary:disabled {
+  color: #00008B !important;
+  background-color: transparent !important;
+}
+
+.btn-outline-primary:not(:disabled):not(.disabled):active, 
+.btn-outline-primary:not(:disabled):not(.disabled).active,
+.show > .btn-outline-primary.dropdown-toggle {
+  color: #fff !important;
+  background-color: #00008B !important;
+  border-color: #00008B !important;
+}
+
+/* Override any remaining Bootstrap primary colors */
+.text-primary {
+  color: #00008B !important;
+}
+
+.bg-primary {
+  background-color: #00008B !important;
+}
+
+.border-primary {
+  border-color: #00008B !important;
+}
+
+/* Ensure all primary buttons use red */
+.btn.btn-primary,
+.btn-primary {
+  background: #00008B !important;
+  border-color: #00008B !important;
+  color: #fff !important;
+}
+
+.btn.btn-primary:hover,
+.btn-primary:hover {
+  background: #b91c1c !important;
+  border-color: #b91c1c !important;
+  color: #fff !important;
+}
+
+/* Comprehensive overrides to eliminate all green colors */
+.text-success,
+.text-success:hover,
+.text-success:focus,
+.text-success:active,
+.text-success:visited,
+.bg-success,
+.btn-success,
+.btn-outline-success,
+.border-success,
+.table-success,
+.badge-success {
+  color: #00008B !important;
+  background-color: #00008B !important;
+  border-color: #00008B !important;
+}
+
+/* More specific overrides for pricing page checkmarks */
+.card-body ul li i.text-success,
+.card-body ul li .text-success,
+.text-success.ion-ios-checkmark,
+i.text-success,
+.ion-ios-checkmark.text-success {
+  color: #00008B !important;
+}
+
+/* Override any Bootstrap success button states */
+.btn-success:hover,
+.btn-success:focus,
+.btn-success:active,
+.btn-success.disabled,
+.btn-success:disabled {
+  color: #fff !important;
+  background-color: #b91c1c !important;
+  border-color: #b91c1c !important;
+}
+
+/* Fix green price colors - revert back to red for most prices */
+.pricing-item .amount,
+.price-display .amount,
+.price-tag .amount {
+  color: #00008B !important;
+}
+
+/* Only make main package prices white (the large cards) */
+.card.shadow-sm .price-display .amount {
+  color: #ffffff !important;
+}
+
+/* Footer styling - make all text white */
+.ftco-footer {
+  color: #ffffff !important;
+}
+
+.ftco-footer h2,
+.ftco-footer h3,
+.ftco-footer h4,
+.ftco-footer h5,
+.ftco-footer h6 {
+  color: #ffffff !important;
+}
+
+.ftco-footer p {
+  color: #ffffff !important;
+}
+
+.ftco-footer a {
+  color: #ffffff !important;
+}
+
+.ftco-footer a:hover {
+  color: #00008B !important;
+}
+
+.ftco-footer ul li {
+  color: #ffffff !important;
+}
+
+.ftco-footer .block-23 ul li {
+  color: #ffffff !important;
+}
+
+.ftco-footer .block-23 ul li .text {
+  color: #ffffff !important;
+}
+
+/* Add spacing between email icon and address */
+.ftco-footer .block-23 ul li .icon {
+  margin-right: 10px !important;
+}
+
+/* Button spacing fixes */
+.btn + .btn {
+  margin-left: 1rem !important;
+}
+
+@media (max-width: 768px) {
+  .btn + .btn {
+    margin-left: 0 !important;
+    margin-top: 1rem !important;
+  }
+}
+
+/* Pricing page specific overrides */
+.card-body ul li {
+  margin-bottom: 0.5rem !important;
+  line-height: 1.3 !important;
+}
+
+.card-body ul li i {
+  color: #00008B !important;
+}
+
+.pricing-item {
+  padding: 1rem !important;
+}
+
+.pricing-item h5 {
+  margin-bottom: 0.5rem !important;
+  font-size: 1rem !important;
+}
+
+.price-tag {
+  margin-bottom: 0.5rem !important;
+}
+
+.price-tag .amount {
+  font-size: 1.5rem !important;
+  font-weight: bold !important;
+}
+
+.card-header {
+  padding: 1rem !important;
+}
+
+.card-body {
+  padding: 1rem !important;
+} 

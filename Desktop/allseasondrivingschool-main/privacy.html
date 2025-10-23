@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Privacy & Cookies Policy - All Season Driving School</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #f97316;
+            --success: #10b981;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --gray: #64748b;
+            --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: white;
+            box-shadow: var(--shadow);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+
+        .logo img:hover {
+            transform: rotate(5deg) scale(1.05);
+        }
+
+        .logo-text {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #1e293b;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-links a.active {
+            color: var(--primary);
+        }
+
+        .nav-links a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--primary);
+        }
+
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Page Hero */
+        .page-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 50vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+            margin-top: 80px;
+        }
+
+        .page-hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            animation: fadeUp 1s ease;
+        }
+
+        .page-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .breadcrumbs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .breadcrumbs a {
+            color: #e2e8f0;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .breadcrumbs a:hover {
+            color: white;
+        }
+
+        .breadcrumbs span {
+            color: #e2e8f0;
+            margin: 0 10px;
+        }
+
+        /* Privacy Section */
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+
+        .section-title p {
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .privacy-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+
+        .privacy-header {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .privacy-header h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .last-updated {
+            opacity: 0.9;
+            font-size: 0.9rem;
+        }
+
+        .privacy-content {
+            padding: 40px;
+        }
+
+        .privacy-section {
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .privacy-section:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .privacy-section h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .privacy-section h3 i {
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+
+        .privacy-section p {
+            color: var(--gray);
+            margin-bottom: 15px;
+            line-height: 1.7;
+        }
+
+        .privacy-section ul {
+            color: var(--gray);
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        .privacy-section li {
+            margin-bottom: 8px;
+            line-height: 1.6;
+        }
+
+        .highlight-box {
+            background: #f8fafc;
+            border-left: 4px solid var(--primary);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .highlight-box p {
+            margin-bottom: 0;
+            color: var(--dark);
+        }
+
+        /* Quick Navigation */
+        .quick-nav {
+            background: var(--light);
+            padding: 40px 0;
+        }
+
+        .nav-sticky {
+            position: sticky;
+            top: 100px;
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: var(--shadow);
+        }
+
+        .nav-sticky h4 {
+            margin-bottom: 20px;
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+
+        .nav-links-list {
+            list-style: none;
+        }
+
+        .nav-links-list li {
+            margin-bottom: 10px;
+        }
+
+        .nav-links-list a {
+            color: var(--gray);
+            text-decoration: none;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links-list a:hover {
+            color: var(--primary);
+            transform: translateX(5px);
+        }
+
+        .nav-links-list i {
+            margin-right: 8px;
+            font-size: 0.8rem;
+            color: var(--primary);
+        }
+
+        /* CTA Section */
+        .cta {
+            background: linear-gradient(rgba(37, 99, 235, 0.9), rgba(37, 99, 235, 0.9)), url('https://images.unsplash.com/photo-1599156480040-87d5eefeb5d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 100px 0;
+        }
+
+        .cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .cta p {
+            max-width: 600px;
+            margin: 0 auto 30px;
+            font-size: 1.1rem;
+            color: #e2e8f0;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: var(--primary);
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            box-shadow: var(--shadow);
+            font-size: 1rem;
+        }
+
+        .btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+        }
+
+        .btn-light {
+            background: white;
+            color: var(--primary);
+        }
+
+        .btn-light:hover {
+            background: #f8fafc;
+            color: var(--primary-dark);
+        }
+
+        .btn-secondary {
+            background: var(--secondary);
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: #e55c00;
+            transform: translateY(-3px);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 70px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-col h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: var(--primary);
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col a {
+            color: #cbd5e1;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-col a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+
+        .social-links {
+            display: flex;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            margin-right: 10px;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: #94a3b8;
+        }
+
+        /* WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            z-index: 1000;
+        }
+
+        .whatsapp-float a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            background: #25d366;
+            color: white;
+            border-radius: 50%;
+            text-decoration: none;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .whatsapp-float a:hover {
+            transform: scale(1.1);
+        }
+
+        .whatsapp-float i {
+            font-size: 1.8rem;
+        }
+
+        .whatsapp-float .tooltip {
+            position: absolute;
+            bottom: 70px;
+            right: 0;
+            background: var(--dark);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+        }
+
+        .whatsapp-float a:hover .tooltip {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Animations */
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .page-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .privacy-content {
+                padding: 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu {
+                display: block;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background: white;
+                flex-direction: column;
+                align-items: center;
+                padding-top: 50px;
+                transition: var(--transition);
+                box-shadow: var(--shadow);
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .nav-links li {
+                margin: 15px 0;
+            }
+
+            .page-hero h1 {
+                font-size: 2rem;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+
+            .btn {
+                padding: 10px 20px;
+            }
+            
+            .privacy-header {
+                padding: 25px 20px;
+            }
+            
+            .privacy-header h2 {
+                font-size: 1.6rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .page-hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .privacy-content {
+                padding: 20px;
+            }
+            
+            .privacy-section h3 {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <img src="images/logo.png" alt="All Season Driving School">
+                    <span class="logo-text">All Season Driving School</span>
+                </div>
+                <div class="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="reviews.html">Reviews</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <div class="page-hero-content">
+                <div class="breadcrumbs">
+                    <a href="index.html">Home</a>
+                    <span><i class="fas fa-chevron-right"></i></span>
+                    <span>Privacy & Cookies Policy</span>
+                </div>
+                <h1>Privacy & Cookies Policy</h1>
+                <p>Understanding how we collect, use, and protect your personal information</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Privacy Section -->
+    <section class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 mb-4">
+                    <div class="nav-sticky fade-in">
+                        <h4>Quick Navigation</h4>
+                        <ul class="nav-links-list">
+                            <li><a href="#information-collected"><i class="fas fa-chevron-right"></i> Information We Collect</a></li>
+                            <li><a href="#types-information"><i class="fas fa-chevron-right"></i> Types of Information</a></li>
+                            <li><a href="#information-use"><i class="fas fa-chevron-right"></i> How We Use Information</a></li>
+                            <li><a href="#information-sharing"><i class="fas fa-chevron-right"></i> Information Sharing</a></li>
+                            <li><a href="#data-security"><i class="fas fa-chevron-right"></i> Data Security</a></li>
+                            <li><a href="#cookies-policy"><i class="fas fa-chevron-right"></i> Cookies Policy</a></li>
+                            <li><a href="#your-rights"><i class="fas fa-chevron-right"></i> Your Rights</a></li>
+                            <li><a href="#data-retention"><i class="fas fa-chevron-right"></i> Data Retention</a></li>
+                            <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contact Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-9">
+                    <div class="privacy-container fade-in">
+                        <div class="privacy-header">
+                            <h2>Privacy & Cookies Policy</h2>
+                            <div class="last-updated">Last updated: December 2024</div>
+                        </div>
+                        <div class="privacy-content">
+                            <!-- Section 1 -->
+                            <div class="privacy-section" id="information-collected">
+                                <h3><i class="fas fa-info-circle"></i> 1. Information We Collect</h3>
+                                <p>We collect information you provide directly to us, such as when you:</p>
+                                <ul>
+                                    <li>Fill out our contact form</li>
+                                    <li>Book driving lessons</li>
+                                    <li>Sign up for our newsletter</li>
+                                    <li>Contact us by phone or email</li>
+                                    <li>Participate in surveys or promotions</li>
+                                </ul>
+                                <div class="highlight-box">
+                                    <p><strong>Note:</strong> We only collect information necessary to provide our services and improve your experience with us.</p>
+                                </div>
+                            </div>
+
+                            <!-- Section 2 -->
+                            <div class="privacy-section" id="types-information">
+                                <h3><i class="fas fa-list-alt"></i> 2. Types of Information</h3>
+                                <p>We may collect the following types of information:</p>
+                                <ul>
+                                    <li><strong>Personal Information:</strong> Name, email, phone number, address</li>
+                                    <li><strong>Driving Information:</strong> License type, experience level, preferred dates</li>
+                                    <li><strong>Payment Information:</strong> Payment method, billing details</li>
+                                    <li><strong>Communication Records:</strong> Emails, phone calls, messages</li>
+                                    <li><strong>Technical Information:</strong> IP address, browser type, device information</li>
+                                    <li><strong>Usage Data:</strong> How you interact with our website and services</li>
+                                </ul>
+                            </div>
+
+                            <!-- Section 3 -->
+                            <div class="privacy-section" id="information-use">
+                                <h3><i class="fas fa-cogs"></i> 3. How We Use Your Information</h3>
+                                <p>We use the information we collect to:</p>
+                                <ul>
+                                    <li>Provide driving instruction services</li>
+                                    <li>Schedule and manage lessons</li>
+                                    <li>Process payments and manage accounts</li>
+                                    <li>Send important updates and notifications</li>
+                                    <li>Improve our services and website</li>
+                                    <li>Respond to your inquiries and provide support</li>
+                                    <li>Comply with legal obligations</li>
+                                    <li>Send marketing communications (with your consent)</li>
+                                </ul>
+                            </div>
+
+                            <!-- Section 4 -->
+                            <div class="privacy-section" id="information-sharing">
+                                <h3><i class="fas fa-share-alt"></i> 4. Information Sharing</h3>
+                                <p>We do not sell, trade, or rent your personal information to third parties. We may share your information only in the following circumstances:</p>
+                                <ul>
+                                    <li>With your explicit consent</li>
+                                    <li>To comply with legal requirements or court orders</li>
+                                    <li>To protect our rights, property, or safety</li>
+                                    <li>With service providers who assist in our operations (under strict confidentiality agreements)</li>
+                                    <li>In connection with a business transfer, such as a merger or acquisition</li>
+                                </ul>
+                                <div class="highlight-box">
+                                    <p><strong>Important:</strong> We require all third parties to respect the security of your personal data and to treat it in accordance with the law.</p>
+                                </div>
+                            </div>
+
+                            <!-- Section 5 -->
+                            <div class="privacy-section" id="data-security">
+                                <h3><i class="fas fa-shield-alt"></i> 5. Data Security</h3>
+                                <p>We implement appropriate security measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction. Our security measures include:</p>
+                                <ul>
+                                    <li>Secure data storage and transmission</li>
+                                    <li>Regular security assessments</li>
+                                    <li>Access controls and authentication</li>
+                                    <li>Employee training on data protection</li>
+                                    <li>Physical security measures for our facilities</li>
+                                </ul>
+                                <p>While we strive to use commercially acceptable means to protect your personal information, no method of transmission over the Internet or electronic storage is 100% secure.</p>
+                            </div>
+
+                            <!-- Section 6 -->
+                            <div class="privacy-section" id="cookies-policy">
+                                <h3><i class="fas fa-cookie-bite"></i> 6. Cookies Policy</h3>
+                                <p>Our website uses cookies to enhance your browsing experience. Cookies are small text files that are placed on your device when you visit our website.</p>
+                                <p>We use the following types of cookies:</p>
+                                <ul>
+                                    <li><strong>Essential Cookies:</strong> Required for website functionality and cannot be switched off</li>
+                                    <li><strong>Analytics Cookies:</strong> Help us understand how visitors use our site</li>
+                                    <li><strong>Preference Cookies:</strong> Remember your settings and preferences</li>
+                                    <li><strong>Marketing Cookies:</strong> Used to track visitors across websites to display relevant ads</li>
+                                </ul>
+                                <p>You can control cookies through your browser settings. However, disabling certain cookies may affect the functionality of our website.</p>
+                            </div>
+
+                            <!-- Section 7 -->
+                            <div class="privacy-section" id="your-rights">
+                                <h3><i class="fas fa-user-check"></i> 7. Your Rights</h3>
+                                <p>You have the following rights regarding your personal information:</p>
+                                <ul>
+                                    <li><strong>Right to Access:</strong> Request a copy of the personal information we hold about you</li>
+                                    <li><strong>Right to Rectification:</strong> Correct inaccurate or incomplete information</li>
+                                    <li><strong>Right to Erasure:</strong> Request deletion of your personal information</li>
+                                    <li><strong>Right to Restrict Processing:</strong> Limit how we use your personal information</li>
+                                    <li><strong>Right to Data Portability:</strong> Receive your personal information in a structured format</li>
+                                    <li><strong>Right to Object:</strong> Object to certain types of processing</li>
+                                    <li><strong>Right to Withdraw Consent:</strong> Withdraw consent at any time where we rely on consent to process your personal information</li>
+                                </ul>
+                                <p>To exercise any of these rights, please contact us using the details provided in Section 9.</p>
+                            </div>
+
+                            <!-- Section 8 -->
+                            <div class="privacy-section" id="data-retention">
+                                <h3><i class="fas fa-database"></i> 8. Data Retention</h3>
+                                <p>We retain your personal information for as long as necessary to provide our services and comply with legal obligations. Our retention periods are based on:</p>
+                                <ul>
+                                    <li>The purpose for which we collected the information</li>
+                                    <li>Legal and regulatory requirements</li>
+                                    <li>Our legitimate business interests</li>
+                                    <li>The nature of the personal information</li>
+                                    <li>The potential risk of harm from unauthorized use or disclosure</li>
+                                </ul>
+                                <p>When we no longer need to retain your personal information, we will securely delete or anonymize it.</p>
+                            </div>
+
+                            <!-- Section 9 -->
+                            <div class="privacy-section" id="contact">
+                                <h3><i class="fas fa-phone"></i> 9. Contact Us</h3>
+                                <p>If you have questions about this privacy policy or wish to exercise your rights, please contact us:</p>
+                                <ul>
+                                    <li><strong>Phone:</strong> <a href="tel:9052260077">(905) 226-0077</a></li>
+                                    <li><strong>Email:</strong> <a href="mailto:allseasonds@gmail.com">allseasonds@gmail.com</a></li>
+                                    <li><strong>Address:</strong> 5428 Tenth Line W, Mississauga, ON L5M 0N1</li>
+                                    <li><strong>Business Hours:</strong> Monday-Sunday 8:00 AM - 9:00 PM</li>
+                                </ul>
+                                <p>We typically respond to privacy-related inquiries within 48 hours during business days.</p>
+                                <div class="highlight-box">
+                                    <p><strong>Your Privacy Matters:</strong> We take your privacy seriously and are committed to protecting your personal information. If you have concerns about how we handle your data, please don't hesitate to contact us.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Questions About Your Privacy?</h2>
+                <p>Contact us today if you have any questions about our privacy practices or want to exercise your data protection rights</p>
+                <a href="contact.html" class="btn btn-light">Contact Us</a>
+                <a href="tel:9052260077" class="btn btn-secondary">Call Now: (905) 226-0077</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3>All Season Driving School</h3>
+                    <p>Professional driving instruction from certified instructors. Get your driver's license with our comprehensive training programs designed for all skill levels.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Info</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> 5428 Tenth Line W, Mississauga, ON L5M 0N1</li>
+                        <li><i class="fas fa-phone"></i> (905) 226-0077</li>
+                        <li><i class="fas fa-envelope"></i> allseasonds@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; <script>document.write(new Date().getFullYear());</script> All Season Driving School. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Button -->
+    <div class="whatsapp-float">
+        <a href="https://wa.me/19052260077?text=Hi! I'm interested in driving lessons with All Season Driving School. Can you help me with more information?" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-whatsapp"></i>
+            <span class="tooltip">Chat with us on WhatsApp!</span>
+        </a>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile Menu Toggle
+            const mobileMenu = document.querySelector('.mobile-menu');
+            const navLinks = document.querySelector('.nav-links');
+
+            mobileMenu.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
+
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('.nav-links-list a').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        const offsetTop = targetElement.offsetTop - 100;
+                        window.scrollTo({
+                            top: offsetTop,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // Scroll Animation
+            const fadeElements = document.querySelectorAll('.fade-in');
+
+            const appearOnScroll = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            fadeElements.forEach(element => {
+                appearOnScroll.observe(element);
+            });
+
+            // Close mobile menu when clicking on a link
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('active');
+                });
+            });
+
+            // Highlight current section in quick nav
+            const sections = document.querySelectorAll('.privacy-section');
+            const navLinksList = document.querySelectorAll('.nav-links-list a');
+
+            window.addEventListener('scroll', () => {
+                let current = '';
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop - 150;
+                    const sectionHeight = section.clientHeight;
+                    
+                    if (pageYOffset >= sectionTop && pageYOffset < sectionTop + sectionHeight) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                navLinksList.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${current}`) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
