@@ -1,0 +1,6 @@
+Place your resume PDF in this folder and name it exactly:
+
+Haris-Fahim-Gaba-Resume.pdf
+
+The Download Resume button in index.html will then download the file automatically.
+
