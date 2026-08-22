@@ -20,16 +20,11 @@ const $$ = (selector, parent = document) => [...parent.querySelectorAll(selector
 const toast = $("#toast");
 let toastTimer;
 
-function showToast(message) {
-  toast.textContent = message;
-  toast.classList.add("show");
-  clearTimeout(toastTimer);
-  toastTimer = setTimeout(() => toast.classList.remove("show"), 3200);
-}
+function showToast(message) { toast.textContent = message; toast.classList.add("show"); clearTimeout(toastTimer); toastTimer = setTimeout(() => toast.classList.remove("show"), 3200); }
 
 function renderSkills(activeIndex = 0) {
   const group = skillGroups[activeIndex];
-  $(".skill-tabs").innerHTML = skillGroups.map((item, index) => `<button class="skill-tab ${index === activeIndex ? "active" : ""}" type="button" role="tab" aria-selected="${index === activeIndex}" data-index="${index}"><span>${item.index}</span>${item.label}<b>↗</b></button>`).join("");
+  $("#skillNav").innerHTML = skillGroups.map((item, index) => `<button class="skill-tab ${index === activeIndex ? "active" : ""}" type="button" role="tab" aria-selected="${index === activeIndex}" data-index="${index}"><span>${item.index}</span><b>${item.label}</b><b>↗</b></button>`).join("");
   $("#skillMeta").textContent = `${group.index} / ${group.focus}`;
   $("#skillTitle").textContent = group.label;
   $("#skillDescription").textContent = group.description;
@@ -38,74 +33,40 @@ function renderSkills(activeIndex = 0) {
 }
 
 function renderProjects() {
-  $("#projectList").innerHTML = projects.map((project) => `<article class="project-card ${project.wide ? "wide" : ""}"><div class="project-image"><img src="${project.image}" alt="Abstract editorial visual for ${project.title}" /><span class="project-index">${project.number} / ${project.type}</span></div><div class="project-body">${project.wide ? `<span class="project-number">${project.number}</span>` : ""}<div><p class="project-meta">Field entry / ${project.type}</p><h3>${project.title}</h3><p>${project.description}</p><div class="project-tags">${project.tags.map((tag) => `<span>${tag}</span>`).join("")}</div></div><button type="button" class="case-link">Case study ↗</button></div></article>`).join("");
+  $("#projectList").innerHTML = projects.map((project) => `<article class="project-card ${project.wide ? "wide" : ""}" data-reveal><div class="project-image"><img src="${project.image}" alt="Abstract editorial visual for ${project.title}" data-shift="7" /><span class="project-index">${project.number} / ${project.type}</span></div><div class="project-body"><p class="project-meta">Field entry / ${project.type}</p><h3>${project.title}</h3><p>${project.description}</p><div class="project-tags">${project.tags.map((tag) => `<span>${tag}</span>`).join("")}</div><button type="button" class="case-link">Discuss this work <span>↗</span></button></div></article>`).join("");
   $$(".case-link").forEach((button) => button.addEventListener("click", () => showToast("A detailed project conversation starts with a direct note.")));
 }
 
-function setActiveNavigation() {
-  const navLinks = $$(".site-nav a");
-  const sections = navLinks.map((link) => $(link.getAttribute("href"))).filter(Boolean);
-  const observer = new IntersectionObserver((entries) => {
-    const visible = entries.filter((entry) => entry.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-    if (!visible) return;
-    navLinks.forEach((link) => link.classList.toggle("active", link.getAttribute("href") === `#${visible.target.id}`));
-  }, { rootMargin: "-25% 0px -60% 0px", threshold: [0.1, 0.3, 0.6] });
-  sections.forEach((section) => observer.observe(section));
-}
-
-function setupContactForm() {
-  $("#contactForm").addEventListener("submit", (event) => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    const name = String(data.get("name") || "").trim();
-    const email = String(data.get("email") || "").trim();
-    const message = String(data.get("message") || "").trim();
-    const subject = encodeURIComponent(`Portfolio enquiry from ${name || "a visitor"}`);
-    const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`);
-    window.location.href = `mailto:fahimgaba9@gmail.com?subject=${subject}&body=${body}`;
-    showToast("Your email draft is ready to send.");
-    event.currentTarget.reset();
-  });
-}
-
-function setupResumeLink() {
-  $$(".resume-link").forEach((link) => link.addEventListener("click", async (event) => {
-    if (window.location.protocol === "file:") return;
-    try {
-      const response = await fetch(link.href, { method: "HEAD" });
-      if (!response.ok) throw new Error("Resume not found");
-    } catch (_) {
-      event.preventDefault();
-      showToast("Add your PDF as assets/Haris-Fahim-Gaba-Resume.pdf to activate the resume download.");
-    }
-  }));
-}
-
 function setupMenu() {
-  const toggle = $("#menuToggle");
-  const nav = $("#siteNav");
-  toggle.addEventListener("click", () => {
-    const open = nav.classList.toggle("open");
-    toggle.classList.toggle("open", open);
-    toggle.setAttribute("aria-expanded", String(open));
-    toggle.setAttribute("aria-label", open ? "Close navigation" : "Open navigation");
-  });
+  const toggle = $("#menuToggle"), nav = $("#siteNav");
+  toggle.addEventListener("click", () => { const open = nav.classList.toggle("open"); toggle.classList.toggle("open", open); toggle.setAttribute("aria-expanded", String(open)); toggle.setAttribute("aria-label", open ? "Close navigation" : "Open navigation"); });
   $$("#siteNav a").forEach((link) => link.addEventListener("click", () => { nav.classList.remove("open"); toggle.classList.remove("open"); toggle.setAttribute("aria-expanded", "false"); }));
 }
 
-function setupReveal() {
-  const observer = new IntersectionObserver((entries) => entries.forEach((entry) => { if (entry.isIntersecting) { entry.target.classList.add("in-view"); observer.unobserve(entry.target); } }), { threshold: 0.12 });
-  $$(".reveal").forEach((element) => observer.observe(element));
+function setupNavigation() {
+  const header = $("#siteHeader"), progress = $("#scrollProgress"), navLinks = $$(".site-nav a"), sections = navLinks.map((link) => $(link.getAttribute("href"))).filter(Boolean);
+  const observer = new IntersectionObserver((entries) => { const current = entries.filter((entry) => entry.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0]; if (current) navLinks.forEach((link) => link.classList.toggle("active", link.getAttribute("href") === `#${current.target.id}`)); }, { rootMargin: "-25% 0px -62% 0px", threshold: [0.1, 0.25, 0.55] });
+  sections.forEach((section) => observer.observe(section));
+  const update = () => { header.classList.toggle("scrolled", window.scrollY > 16); const max = document.documentElement.scrollHeight - window.innerHeight; progress.style.width = `${max > 0 ? (window.scrollY / max) * 100 : 0}%`; };
+  update(); window.addEventListener("scroll", update, { passive: true });
 }
 
-renderSkills();
-renderProjects();
-setupMenu();
-setActiveNavigation();
-setupContactForm();
-setupResumeLink();
-setupReveal();
-$("#year").textContent = new Date().getFullYear();
-const syncHeader = () => $("#siteHeader").classList.toggle("scrolled", window.scrollY > 24);
-syncHeader();
-window.addEventListener("scroll", syncHeader, { passive: true });
+function setupReveal() {
+  const observer = new IntersectionObserver((entries) => entries.forEach((entry) => { if (entry.isIntersecting) { entry.target.classList.add("in-view"); observer.unobserve(entry.target); } }), { threshold: 0.13 });
+  $$('[data-reveal]').forEach((item) => observer.observe(item));
+}
+
+function setupParallax() {
+  const media = $$('[data-shift]'); if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const update = () => media.forEach((item) => { const rect = item.getBoundingClientRect(); const offset = (rect.top + rect.height / 2 - window.innerHeight / 2) / window.innerHeight; item.style.transform = `scale(1.06) translateY(${offset * Number(item.dataset.shift)}px)`; });
+  update(); window.addEventListener('scroll', update, { passive: true });
+}
+
+function setupContactForm() {
+  $("#contactForm").addEventListener("submit", (event) => { event.preventDefault(); const data = new FormData(event.currentTarget); const name = String(data.get("name") || "").trim(), email = String(data.get("email") || "").trim(), message = String(data.get("message") || "").trim(); const subject = encodeURIComponent(`Portfolio enquiry from ${name || "a visitor"}`), body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`); window.location.href = `mailto:fahimgaba9@gmail.com?subject=${subject}&body=${body}`; showToast("Your email draft is ready to send."); event.currentTarget.reset(); });
+}
+
+function setupResume() { $$(".resume-link").forEach((link) => link.addEventListener("click", async (event) => { if (window.location.protocol === "file:") return; try { const response = await fetch(link.href, { method: "HEAD" }); if (!response.ok) throw new Error("Resume not found"); } catch (_) { event.preventDefault(); showToast("Add your PDF as assets/Haris-Fahim-Gaba-Resume.pdf to activate the resume download."); } })); }
+
+renderSkills(); renderProjects(); setupMenu(); setupNavigation(); setupReveal(); setupParallax(); setupContactForm(); setupResume(); $("#year").textContent = new Date().getFullYear();
+window.addEventListener("load", () => setTimeout(() => { $("#pageLoader").classList.add("done"); document.body.classList.add("is-ready"); }, 380));
