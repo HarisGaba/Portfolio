@@ -4,122 +4,76 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Portfolio of Haris Fahim Gaba, a Junior Web Developer in Karachi with experience in e-commerce, App Store Optimization, mobile development, digital marketing, and AI-assisted workflows." />
-    <meta name="theme-color" content="#172a3b" />
+    <meta name="theme-color" content="#0b162a" />
     <link rel="icon" href="assets/haris-mark.png" type="image/png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@10..48,400;10..48,500;10..48,600;10..48,700;10..48,800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
     <title>Haris Fahim Gaba — Junior Web Developer</title>
   </head>
   <body>
+    <div class="page-loader" id="pageLoader" aria-label="Loading portfolio"><div><p>Haris Fahim Gaba</p><span></span><span></span><span></span></div></div>
+    <div class="scroll-progress" id="scrollProgress"></div>
+
     <header class="site-header" id="siteHeader">
       <div class="header-inner">
-        <a class="text-lockup" href="#top" aria-label="Haris Gaba, return to top">
-          <span>Haris Fahim</span><b>Gaba</b><i>Portfolio</i>
-        </a>
-        <button class="menu-toggle" type="button" id="menuToggle" aria-label="Open navigation" aria-expanded="false">
-          <span></span><span></span><span></span>
-        </button>
+        <a href="#top" class="wordmark" aria-label="Haris Gaba, return to top"><span>Haris Fahim</span><b>Gaba</b></a>
         <nav class="site-nav" id="siteNav" aria-label="Primary navigation">
-          <a href="#about">About</a>
-          <a href="#skills">Skills</a>
-          <a href="#experience">Experience</a>
-          <a href="#projects">Projects</a>
-          <a href="#contact">Contact</a>
+          <a href="#about"><span>01</span>About</a><a href="#skills"><span>02</span>Skills</a><a href="#experience"><span>03</span>Experience</a><a href="#projects"><span>04</span>Projects</a><a href="#contact"><span>05</span>Contact</a>
         </nav>
-        <a class="nav-cta" href="mailto:fahimgaba9@gmail.com">Say hello <span aria-hidden="true">↗</span></a>
+        <a class="header-cta" href="mailto:fahimgaba9@gmail.com">Let&apos;s talk <i>↗</i></a>
+        <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open navigation" aria-expanded="false"><span></span><span></span></button>
       </div>
     </header>
 
     <main>
       <section class="hero" id="top">
-        <img class="hero-art" src="assets/haris-hero-atlas.jpg" alt="Abstract technical atlas with a warm wayfinding path" />
-        <div class="hero-overlay"></div><div class="hero-grain"></div>
-        <div class="hero-rail"><span></span></div>
-        <div class="shell hero-inner reveal">
-          <p class="eyebrow light"><i></i>Karachi, Pakistan · Available for thoughtful work</p>
-          <h1>Haris Fahim<br /><em>Gaba.</em></h1>
-          <div class="hero-detail-row">
-            <div><p class="hero-role">Junior Web Developer</p><p>Also experienced in App Store Optimization, mobile app development, digital marketing, and AI-assisted tools.</p></div>
-            <p class="hero-note">I build web applications and e-commerce sites, and bring that technical foundation into app growth and AI-assisted workflows.</p>
+        <div class="shell hero-grid">
+          <div class="hero-copy">
+            <p class="section-kicker intro-line"><span>Portfolio 2026</span><i></i><span>Karachi, Pakistan</span></p>
+            <p class="intro-label" data-reveal>Junior Web Developer</p>
+            <h1><span data-reveal>Digital work,</span><span data-reveal class="italic">made useful.</span></h1>
+            <p class="hero-summary" data-reveal>Web applications and e-commerce sites, informed by app growth, digital marketing, and AI-assisted workflows.</p>
+            <div class="hero-actions" data-reveal><a href="#projects" class="button button-dark">Explore selected work <i>↓</i></a><a href="assets/Haris-Fahim-Gaba-Resume.pdf" download class="button button-quiet resume-link">Download resume <i>↓</i></a></div>
           </div>
-          <div class="hero-actions">
-            <a class="button primary" href="#projects">View My Work <span>↘</span></a>
-            <a class="button outline resume-link" href="assets/Haris-Fahim-Gaba-Resume.pdf" download>⌄ Download Resume</a>
-            <a class="text-link" href="#contact">Get In Touch <span>↗</span></a>
+          <div class="hero-visual" data-reveal>
+            <div class="visual-frame"><img src="assets/haris-hero-atlas.jpg" alt="Abstract digital composition of pathways and technical objects" data-shift="12" /><div class="visual-shade"></div><p>Building from<br />the connective tissue.</p></div>
+            <div class="hero-stamp"><span>Available for</span><b>Thoughtful<br />work</b><i>↗</i></div>
           </div>
+          <div class="hero-footer" data-reveal><p>Haris Fahim Gaba</p><p>Scroll to explore <span>↓</span></p><p>Web / Growth / AI</p></div>
         </div>
       </section>
 
-      <section class="section paper" id="about">
-        <div class="shell section-grid profile-grid">
-          <div class="reveal"><p class="eyebrow"><b>01</b> Profile <i></i></p></div>
-          <div class="reveal delay-1"><h2>Web foundations.<br /><em>Growth-minded</em> thinking.</h2><p class="lead">Junior Web Developer with hands-on experience building and customizing WordPress and Shopify sites, and developing backend applications with ASP.NET Core and Entity Framework Core. Alongside development work, I&apos;ve built practical experience in App Store Optimization, mobile app development with AI-assisted tools, and digital marketing. Currently completing an ACCP(AI) diploma at Aptech Learning, deepening my skills in Generative AI, prompt engineering, and AI-assisted development.</p></div>
-          <aside class="principle reveal delay-2"><p>Working principle</p><strong>Practical work, curious process, clear next steps.</strong></aside>
+      <section class="section about" id="about">
+        <div class="shell split-layout">
+          <aside class="section-aside" data-reveal><p class="section-index">01 / About</p><p class="aside-note">A practical developer&apos;s perspective, with an eye on the systems around the build.</p></aside>
+          <div class="about-content"><p class="section-kicker" data-reveal>Profile <i></i></p><h2 data-reveal>Web foundations,<br /><em>growth-minded</em> thinking.</h2><p class="body-large" data-reveal>Junior Web Developer with hands-on experience building and customizing WordPress and Shopify sites, and developing backend applications with ASP.NET Core and Entity Framework Core. Alongside development work, I&apos;ve built practical experience in App Store Optimization, mobile app development with AI-assisted tools, and digital marketing. Currently completing an ACCP(AI) diploma at Aptech Learning, deepening my skills in Generative AI, prompt engineering, and AI-assisted development.</p><div class="quote-block" data-reveal><span>01</span><p>Practical work, curious process, clear next steps.</p></div></div>
         </div>
       </section>
 
-      <section class="section sand" id="skills">
-        <div class="shell">
-          <div class="reveal"><p class="eyebrow"><b>02</b> Skill atlas <i></i></p></div>
-          <div class="skill-layout">
-            <div class="reveal delay-1"><h2>A cross-disciplinary <em>toolkit.</em></h2><p class="lead compact">Web development is the core practice. The adjacent skills help connect a build to the people, platforms, and workflows around it.</p><div class="skill-tabs" role="tablist" aria-label="Skill categories"></div></div>
-            <article class="skill-panel reveal delay-2" aria-live="polite"><div class="panel-corner"></div><div class="panel-head"><div><p id="skillMeta">01 / Primary practice</p><h3 id="skillTitle">Web Development</h3></div><span class="panel-symbol">⌘</span></div><p id="skillDescription"></p><div class="skill-chips" id="skillChips"></div></article>
-          </div>
-        </div>
+      <section class="section skills" id="skills">
+        <div class="shell"><div class="section-heading"><div data-reveal><p class="section-kicker light">Capabilities <i></i></p><h2>A flexible toolkit for <em>digital problems.</em></h2></div><p data-reveal>Web development is the core practice. The adjacent skills help connect a build to the people, platforms, and workflows around it.</p></div><div class="skills-layout"><div class="skill-nav" id="skillNav" role="tablist" aria-label="Skill categories"></div><article class="skill-detail" data-reveal><div class="detail-top"><p id="skillMeta"></p><span>⌘</span></div><h3 id="skillTitle"></h3><p id="skillDescription"></p><div class="skill-chips" id="skillChips"></div></article></div></div>
       </section>
 
-      <section class="section ink" id="experience">
-        <div class="shell">
-          <div class="reveal"><p class="eyebrow light"><b>03</b> Experience <i></i></p></div>
-          <div class="heading-split reveal delay-1"><h2>A growing practice in <em>app discovery.</em></h2><p>Research, metadata, and workflow thinking help turn a useful app into something people can find.</p></div>
-          <article class="experience-entry reveal delay-2">
-            <div class="experience-date"><p>Nov 2025 — Present</p><span>⌖ Karachi, Pakistan</span></div>
-            <div class="experience-body"><p class="company">Appsware Technologies</p><h3>Junior ASO Manager</h3><ul><li>Perform App Store Optimization to improve app visibility and discoverability.</li><li>Conduct keyword research and identify relevant search terms.</li><li>Optimize app titles, descriptions, keywords, and metadata.</li><li>Analyze app performance and search visibility.</li><li>Support digital marketing and user acquisition strategies.</li><li>Use AI tools to assist with research, content analysis, and workflow improvement.</li></ul></div>
-            <div class="experience-note"><span>✦</span><p>Linking insight to implementation—from listing research to tools that streamline the work.</p></div>
-          </article>
-        </div>
+      <section class="section experience" id="experience">
+        <div class="shell"><div class="experience-header"><div data-reveal><p class="section-kicker">03 / Experience <i></i></p><h2>Learn the signal.<br /><em>Improve the system.</em></h2></div><p data-reveal>Research, metadata, and workflow thinking help turn a useful app into something people can find.</p></div><article class="role-card" data-reveal><div class="role-date"><span>Nov 2025 — Present</span><span>Karachi, Pakistan</span></div><div class="role-title"><p>Appsware Technologies</p><h3>Junior ASO Manager</h3></div><ul class="role-list"><li>Perform App Store Optimization to improve app visibility and discoverability.</li><li>Conduct keyword research and identify relevant search terms.</li><li>Optimize app titles, descriptions, keywords, and metadata.</li><li>Analyze app performance and search visibility.</li><li>Support digital marketing and user acquisition strategies.</li><li>Use AI tools to assist with research, content analysis, and workflow improvement.</li></ul><div class="role-end"><span>✦</span><p>Linking insight to implementation—from listing research to tools that streamline the work.</p></div></article></div>
       </section>
 
-      <section class="section paper" id="projects">
-        <div class="shell">
-          <div class="reveal"><p class="eyebrow"><b>04</b> Selected work <i></i></p></div>
-          <div class="heading-split dark reveal delay-1"><h2>The systems I&apos;m <em>building.</em></h2><p>Four practical field entries spanning storefronts, backend systems, mobile interfaces, and app discovery work. Each traces a different point where a build meets an audience.</p></div>
-          <div class="project-list" id="projectList"></div>
-        </div>
+      <section class="section projects" id="projects">
+        <div class="shell"><div class="projects-header"><div data-reveal><p class="section-kicker">04 / Selected work <i></i></p><h2>Systems taking<br /><em>shape.</em></h2></div><p data-reveal>Four practical field entries spanning storefronts, backend systems, mobile interfaces, and app discovery work. Each traces a different point where a build meets an audience.</p></div><div class="project-list" id="projectList"></div></div>
       </section>
 
-      <section class="section sand rail-section" id="education">
-        <div class="vertical-rail" aria-hidden="true"></div>
-        <div class="shell learning-grid">
-          <div class="reveal"><p class="eyebrow"><b>05</b> Learning record <i></i></p><h2>Learning in public.<br /><em>Building in practice.</em></h2></div>
-          <div class="learning-list reveal delay-1">
-            <article><h3>ACCP(AI)</h3><p>Diploma in Computer Programming / Artificial Intelligence</p><span>Aptech Learning · Currently Enrolled</span></article>
-            <article><h3>Intermediate</h3><p>Government Degree Boys College Gulzar-e-Hijri</p><span>Education</span></article>
-            <article><h3>Matriculation</h3><p>The Smart School</p><span>Education</span></article>
-            <article><h3>Certifications</h3><p>Graphic Designing Certification · Digital Marketing Certification</p><span>Professional learning</span></article>
-          </div>
-        </div>
+      <section class="section education" id="education">
+        <div class="shell education-grid"><div data-reveal><p class="section-kicker light">Learning record <i></i></p><h2>Learning in public.<br /><em>Building in practice.</em></h2></div><div class="learning-list" data-reveal><article><p>ACCP(AI)</p><span>Diploma in Computer Programming / Artificial Intelligence</span><b>Aptech Learning · Currently Enrolled</b></article><article><p>Intermediate</p><span>Government Degree Boys College Gulzar-e-Hijri</span><b>Education</b></article><article><p>Matriculation</p><span>The Smart School</span><b>Education</b></article><article><p>Certifications</p><span>Graphic Designing Certification · Digital Marketing Certification</span><b>Professional learning</b></article></div></div>
       </section>
 
-      <section class="section contact-section rail-section" id="contact">
-        <div class="contact-accent"></div><div class="contact-wash"></div><div class="vertical-rail" aria-hidden="true"></div>
-        <div class="shell contact-grid">
-          <div class="reveal"><p class="eyebrow"><b>06</b> Contact <i></i></p><h2>Bring a practical problem. <em>Let&apos;s make it useful.</em></h2><p class="lead compact">For web work, storefront builds, app growth questions, or an introduction, use the form or reach out directly.</p>
-            <div class="contact-lines">
-              <a href="mailto:fahimgaba9@gmail.com"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18v12H3zM3 7l9 7 9-7"/></svg><span>fahimgaba9@gmail.com</span><b>↗</b></a>
-              <a href="tel:+923342449599"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h4l2 5-2.4 1.8a15 15 0 0 0 5.6 5.6L16 13l5 2v4c0 1.1-.9 2-2 2C10.2 21 3 13.8 3 5c0-1.1.9-2 2-2Z"/></svg><span>0334-2449599</span><b>↗</b></a>
-              <a href="https://www.linkedin.com/in/haris-gaba-106347359/" target="_blank" rel="noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9v10M6 5v.1M10 19v-6a4 4 0 0 1 8 0v6M10 12v7"/></svg><span>LinkedIn</span><b>↗</b></a>
-              <a href="https://github.com/HarisGaba" target="_blank" rel="noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.9c0-1.1.1-1.6-.5-2.4 2.8-.3 5.5-1.4 5.5-6.2A4.8 4.8 0 0 0 19.7 6.2 4.5 4.5 0 0 0 19.6 3S18.5 2.7 16 4.3a13.4 13.4 0 0 0-7 0C6.5 2.7 5.4 3 5.4 3a4.5 4.5 0 0 0-.1 3.2A4.8 4.8 0 0 0 4 9.6c0 4.8 2.7 5.9 5.5 6.2-.6.8-.6 1.6-.5 2.4V22"/></svg><span>GitHub</span><b>↗</b></a>
-            </div>
-          </div>
-          <form class="contact-form reveal delay-2" id="contactForm"><p>Message Haris</p><label>Name<input type="text" name="name" placeholder="Your name" required /></label><label>Email<input type="email" name="email" placeholder="you@example.com" required /></label><label>Message<textarea name="message" rows="5" placeholder="Tell me a little about what you are building." required></textarea></label><button class="button primary" type="submit">Draft email <span>↗</span></button></form>
-        </div>
+      <section class="section contact" id="contact">
+        <div class="shell contact-grid"><div class="contact-copy"><p class="section-kicker" data-reveal>05 / Contact <i></i></p><h2 data-reveal>Bring a practical problem.<br /><em>Let&apos;s make it useful.</em></h2><p class="body-large compact" data-reveal>For web work, storefront builds, app growth questions, or an introduction, use the form or reach out directly.</p><div class="contact-links" data-reveal><a href="mailto:fahimgaba9@gmail.com"><span class="link-icon">@</span><b>fahimgaba9@gmail.com</b><i>↗</i></a><a href="tel:+923342449599"><span class="link-icon">↗</span><b>0334-2449599</b><i>↗</i></a><a href="https://www.linkedin.com/in/haris-gaba-106347359/" target="_blank" rel="noreferrer"><span class="link-icon">in</span><b>LinkedIn</b><i>↗</i></a><a href="https://github.com/HarisGaba" target="_blank" rel="noreferrer"><span class="link-icon">gh</span><b>GitHub</b><i>↗</i></a></div></div><form class="contact-form" id="contactForm" data-reveal><div class="form-header"><p>Start a conversation</p><span>↗</span></div><label>Name<input type="text" name="name" placeholder="Your name" required /></label><label>Email<input type="email" name="email" placeholder="you@example.com" required /></label><label>Message<textarea name="message" rows="5" placeholder="Tell me a little about what you are building." required></textarea></label><button type="submit" class="button button-dark">Draft email <i>↗</i></button></form></div>
       </section>
     </main>
 
-    <footer><div class="shell footer-inner"><div><span class="footer-mark"><img src="assets/haris-mark.png" alt="" /></span>© <span id="year"></span> Haris Fahim Gaba</div><p>Web development, app growth, and AI-assisted workflows—connected with care.</p></div></footer>
+    <footer><div class="shell footer-inner"><p>© <span id="year"></span> Haris Fahim Gaba</p><p>Web development, app growth, and AI-assisted workflows—connected with care.</p><a href="#top">Back to top ↑</a></div></footer>
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
     <script src="script.js"></script>
   </body>
