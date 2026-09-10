@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,500;1,400;1,500&display=swap');
+@import "tailwindcss";
+
+:root {
+  --bg: #f8f9fc;
+  --bg2: #ffffff;
+  --surface: #ffffff;
+  --border: #e4e8f0;
+  --border2: #d0d7e6;
+  --accent: #2563eb;
+  --accent-light: #eff6ff;
+  --accent-mid: #93c5fd;
+  --text: #111827;
+  --text2: #374151;
+  --muted: #6b7280;
+  --muted2: #9ca3af;
+  --navy: #1e3a5f;
+  --sky: #bfdbfe;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', system-ui, sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+}
+
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: #f1f5f9; }
+::-webkit-scrollbar-thumb { background: #93c5fd; border-radius: 4px; }
+::selection { background: #bfdbfe; color: #1e3a5f; }
+
+.serif { font-family: 'Lora', Georgia, serif; }
