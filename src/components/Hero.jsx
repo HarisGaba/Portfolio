@@ -66,7 +66,7 @@ export default function Hero() {
             onMouseLeave={e=>{e.currentTarget.style.background='#2563eb';e.currentTarget.style.transform='translateY(0)'}}>
             See my work <span>↓</span>
           </a>
-          <a href="/assets/Haris-Fahim-Gaba-Resume.pdf" download style={{
+          <a href="/public/assets/Haris-Fahim-Gaba-Resume.pdf" download style={{
             background:'#fff', color:'#374151', textDecoration:'none',
             padding:'12px 26px', borderRadius:8, fontSize:14, fontWeight:600,
             border:'1.5px solid #e4e8f0', transition:'all 0.2s',
